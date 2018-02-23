@@ -8,7 +8,7 @@ namespace Omnion.ChessClient
 {
     public class ChessPiece
     {
-        public enum ChessPieceType { None, Pawn, Rook, Horse, Bishop, Queen, King };
+        public enum ChessPieceType { None, Pawn, Bishop, Horse, Rook, Queen, King };
         public enum ChessPieceColor { None, White, Black };
 
         ChessPieceType type;

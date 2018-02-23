@@ -1,0 +1,22 @@
+// keep the neurons to about 1000
+
+describe the situation:
+(board and moveable pieces)
+(position of own and enemy king)
+possible moves and possible counter moves
+
+98 * 
+
+describe the move: 
+1. what type of piece?
+2. what type is on destination square?
+3. yfrom-position
+(mirror for black player)
+4. # x-squares moved (-7..7)
+(mirror for black player)
+5. # y-squares moved (-7..7)
+(mirror for black player)
+
+neurons: 6+6+8+15+15 == 50
+
+move rating = (5*a+b)+c+d+e

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Omnion.NeuralNet
 {
@@ -104,6 +105,18 @@ namespace Omnion.NeuralNet
             }
         }
 
+        public long TotalDendriteCount()
+        {
+            long totalDendrites = 0;
+            for (int l = 0; l < Layers.Count; l++)
+            {
+                Layer layer = Layers[l];
+                totalDendrites += layer.Neurons.Count * layer.Neurons[0].DendriteCount;
+            }
+
+            return totalDendrites;
+        }
+
         public NeuralNetwork(double learningRate, int[] layers)
         {
             learningIterations = 0;
@@ -139,6 +152,33 @@ namespace Omnion.NeuralNet
         {
             return 1 / (1 + Math.Exp(-x));
         }
+
+        // Measure the amount of training by calculating the "randomness" of the dendrites weights.
+        // the dendrites were initalized with random values. After traing, these values will change
+        // If the values are changing more slowly, the network is fully trained
+        public double MeasureNetworkQuality()
+        {
+            double randomness = 0;
+            double previousValue = 0;
+            for (int l = 0; l < Layers.Count; l++)
+            {
+                Layer layer = Layers[l];
+
+                for (int n = 0; n < layer.Neurons.Count; n++)
+                {
+                    Neuron neuron = layer.Neurons[n];
+
+                    foreach (Dendrite dendrite in neuron.Dendrites)
+                    {
+                        randomness += Math.Abs(previousValue - dendrite.Weight);
+                        previousValue = dendrite.Weight;
+                    }
+                }
+            }
+
+            return randomness / TotalDendriteCount(); 
+        }
+
 
         public double[] Run(List<double> input)
         {
@@ -239,6 +279,8 @@ namespace Omnion.NeuralNet
 
                     for (int k = 0; k < n.Dendrites.Count; k++)
                         n.Dendrites[k].Weight = n.Dendrites[k].Weight + (this.LearningRate * this.Layers[i - 1].Neurons[k].Value * n.Delta);
+
+                    Application.DoEvents();     // PP: give some processor time to handle interface
                 }
             }
         }

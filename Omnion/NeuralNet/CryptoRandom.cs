@@ -16,5 +16,10 @@ namespace Omnion.NeuralNet
             }
         }
 
+        public int NextInt(int max)
+        {
+            return (int)(RandomValue * max);
+        }
+
     }
 }

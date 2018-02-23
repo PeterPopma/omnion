@@ -83,7 +83,7 @@ namespace Omnion.Forms
             return charpos;
         }
 
-        private void LoadCompressedData(string FileName, int layerCount, double learningRate, int inputNeurons, int outputNeurons, int hiddenNeurons)
+        private void LoadCompressedData(string FileName, int layerCount, double learningRate, int inputNeurons, int outputNeurons, int hiddenNeurons, long learningIterations)
         {
             using (ZipArchive archive = ZipFile.OpenRead(FileName + "_data"))
             {
@@ -93,7 +93,7 @@ namespace Omnion.Forms
                     {
                         using (var stream = new StreamReader(entry.Open()))
                         {
-                            LoadData(stream, layerCount, learningRate, inputNeurons, outputNeurons, hiddenNeurons);
+                            LoadData(stream, layerCount, learningRate, inputNeurons, outputNeurons, hiddenNeurons, learningIterations);
                         }
                     }
                 }
@@ -127,7 +127,7 @@ namespace Omnion.Forms
                 srFile.ReadLine();      // savedate
                 long totalNeurons = Convert.ToInt64(srFile.ReadLine());
                 int layerCount = Convert.ToInt32(srFile.ReadLine());
-                long learningIterations = Convert.ToInt32(srFile.ReadLine());
+                long learningIterations = Convert.ToInt64(srFile.ReadLine());
                 double learningRate = Convert.ToDouble((srFile.ReadLine()), CultureInfo.InvariantCulture.NumberFormat);
                 int inputNeurons = Convert.ToInt32(srFile.ReadLine());
                 int hiddenNeurons = Convert.ToInt32(srFile.ReadLine());
@@ -136,11 +136,11 @@ namespace Omnion.Forms
 
                 if (compressed)
                 {
-                    LoadCompressedData(rec.FileName, layerCount, learningRate, inputNeurons, outputNeurons, hiddenNeurons);
+                    LoadCompressedData(rec.FileName, layerCount, learningRate, inputNeurons, outputNeurons, hiddenNeurons, learningIterations);
                 }
                 else
                 {
-                    LoadData(srFile, layerCount, learningRate, inputNeurons, outputNeurons, hiddenNeurons);
+                    LoadData(srFile, layerCount, learningRate, inputNeurons, outputNeurons, hiddenNeurons, learningIterations);
                 }
 
                 myParent.LearningRate = learningRate;
@@ -153,10 +153,12 @@ namespace Omnion.Forms
             }
         }
 
-        private void LoadData(StreamReader srFile, int layerCount, double learningRate, int inputNeurons, int outputNeurons, int hiddenNeurons)
+        private void LoadData(StreamReader srFile, int layerCount, double learningRate, int inputNeurons, int outputNeurons, int hiddenNeurons, long learningIterations)
         {
             myParent.NeuralNetwork = new NeuralNetwork(learningRate, inputNeurons, hiddenNeurons, outputNeurons);
             myParent.NeuralNetwork.Layers = new List<Layer>();
+            myParent.NeuralNetwork.LearningIterations = learningIterations;
+
             for (int l = 0; l < layerCount; l++)
             {
                 int numNeurons = hiddenNeurons;

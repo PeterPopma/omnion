@@ -64,6 +64,9 @@
             this.gradientPanel4 = new Omnion.CustomControls.GradientPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.gradientPanel24 = new Omnion.CustomControls.GradientPanel2();
+            this.labelNetworkQuality = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.gradientButtonAbortTraining = new Omnion.CustomControls.GradientButton();
             this.gradientButtonTrain = new Omnion.CustomControls.GradientButton();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -87,6 +90,7 @@
             this.gradientPanel6 = new Omnion.CustomControls.GradientPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.gradientPanel26 = new Omnion.CustomControls.GradientPanel2();
+            this.labelAllPossibleMoves = new System.Windows.Forms.Label();
             this.gradientButtonPlayBlack = new Omnion.CustomControls.GradientButton();
             this.gradientButtonPlayWhite = new Omnion.CustomControls.GradientButton();
             this.checkBoxAggressivePlay = new System.Windows.Forms.CheckBox();
@@ -124,7 +128,8 @@
             this.numericUpDownXfrom = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.gradientButtonMakeMove = new Omnion.CustomControls.GradientButton();
-            this.gradientButtonTrainOnPieces = new Omnion.CustomControls.GradientButton();
+            this.checkBoxTrainCheckmate = new System.Windows.Forms.CheckBox();
+            this.checkBoxTrainPieces = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -181,7 +186,6 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(262, 204);
             this.gradientPanel1.TabIndex = 2;
-            this.gradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gradientPanel1_Paint);
             // 
             // panel2
             // 
@@ -191,7 +195,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 194);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // gradientPanel21
             // 
@@ -613,6 +616,9 @@
             // 
             // gradientPanel24
             // 
+            this.gradientPanel24.Controls.Add(this.labelNetworkQuality);
+            this.gradientPanel24.Controls.Add(this.label28);
+            this.gradientPanel24.Controls.Add(this.gradientButtonAbortTraining);
             this.gradientPanel24.Controls.Add(this.gradientButtonTrain);
             this.gradientPanel24.Controls.Add(this.label14);
             this.gradientPanel24.Controls.Add(this.label10);
@@ -628,11 +634,45 @@
             this.gradientPanel24.Size = new System.Drawing.Size(516, 414);
             this.gradientPanel24.TabIndex = 3;
             // 
+            // labelNetworkQuality
+            // 
+            this.labelNetworkQuality.AutoSize = true;
+            this.labelNetworkQuality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNetworkQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNetworkQuality.Location = new System.Drawing.Point(186, 79);
+            this.labelNetworkQuality.Name = "labelNetworkQuality";
+            this.labelNetworkQuality.Size = new System.Drawing.Size(53, 20);
+            this.labelNetworkQuality.TabIndex = 22;
+            this.labelNetworkQuality.Text = "XXXX";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(25, 79);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(110, 20);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Training value:";
+            // 
+            // gradientButtonAbortTraining
+            // 
+            this.gradientButtonAbortTraining.Active = false;
+            this.gradientButtonAbortTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonAbortTraining.Location = new System.Drawing.Point(261, 303);
+            this.gradientButtonAbortTraining.Name = "gradientButtonAbortTraining";
+            this.gradientButtonAbortTraining.Size = new System.Drawing.Size(113, 37);
+            this.gradientButtonAbortTraining.TabIndex = 20;
+            this.gradientButtonAbortTraining.Text = "Abort training";
+            this.gradientButtonAbortTraining.UseVisualStyleBackColor = true;
+            this.gradientButtonAbortTraining.Click += new System.EventHandler(this.gradientButtonAbortTraining_Click);
+            // 
             // gradientButtonTrain
             // 
             this.gradientButtonTrain.Active = false;
             this.gradientButtonTrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonTrain.Location = new System.Drawing.Point(204, 304);
+            this.gradientButtonTrain.Location = new System.Drawing.Point(127, 303);
             this.gradientButtonTrain.Name = "gradientButtonTrain";
             this.gradientButtonTrain.Size = new System.Drawing.Size(113, 37);
             this.gradientButtonTrain.TabIndex = 19;
@@ -656,7 +696,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(30, 97);
+            this.label10.Location = new System.Drawing.Point(30, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 16;
@@ -702,10 +742,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(200, 52);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 24);
+            this.label4.Size = new System.Drawing.Size(155, 20);
             this.label4.TabIndex = 15;
             this.label4.Text = "Number of Trainings:";
             // 
@@ -713,10 +753,10 @@
             // 
             this.labelTrainingIterations.AutoSize = true;
             this.labelTrainingIterations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelTrainingIterations.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTrainingIterations.Location = new System.Drawing.Point(384, 52);
+            this.labelTrainingIterations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTrainingIterations.Location = new System.Drawing.Point(186, 45);
             this.labelTrainingIterations.Name = "labelTrainingIterations";
-            this.labelTrainingIterations.Size = new System.Drawing.Size(66, 24);
+            this.labelTrainingIterations.Size = new System.Drawing.Size(53, 20);
             this.labelTrainingIterations.TabIndex = 16;
             this.labelTrainingIterations.Text = "XXXX";
             // 
@@ -786,7 +826,6 @@
             this.label13.Size = new System.Drawing.Size(82, 13);
             this.label13.TabIndex = 19;
             this.label13.Text = "Output value(s):";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -851,7 +890,9 @@
             // 
             // gradientPanel26
             // 
-            this.gradientPanel26.Controls.Add(this.gradientButtonTrainOnPieces);
+            this.gradientPanel26.Controls.Add(this.checkBoxTrainPieces);
+            this.gradientPanel26.Controls.Add(this.checkBoxTrainCheckmate);
+            this.gradientPanel26.Controls.Add(this.labelAllPossibleMoves);
             this.gradientPanel26.Controls.Add(this.gradientButtonPlayBlack);
             this.gradientPanel26.Controls.Add(this.gradientButtonPlayWhite);
             this.gradientPanel26.Controls.Add(this.checkBoxAggressivePlay);
@@ -895,6 +936,17 @@
             this.gradientPanel26.Size = new System.Drawing.Size(592, 414);
             this.gradientPanel26.TabIndex = 3;
             // 
+            // labelAllPossibleMoves
+            // 
+            this.labelAllPossibleMoves.AutoSize = true;
+            this.labelAllPossibleMoves.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelAllPossibleMoves.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAllPossibleMoves.Location = new System.Drawing.Point(154, 222);
+            this.labelAllPossibleMoves.Name = "labelAllPossibleMoves";
+            this.labelAllPossibleMoves.Size = new System.Drawing.Size(42, 20);
+            this.labelAllPossibleMoves.TabIndex = 59;
+            this.labelAllPossibleMoves.Text = "XXX";
+            // 
             // gradientButtonPlayBlack
             // 
             this.gradientButtonPlayBlack.Active = false;
@@ -923,11 +975,12 @@
             // 
             this.checkBoxAggressivePlay.AutoSize = true;
             this.checkBoxAggressivePlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.checkBoxAggressivePlay.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxAggressivePlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxAggressivePlay.Location = new System.Drawing.Point(412, 242);
+            this.checkBoxAggressivePlay.Checked = true;
+            this.checkBoxAggressivePlay.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAggressivePlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAggressivePlay.Location = new System.Drawing.Point(400, 191);
             this.checkBoxAggressivePlay.Name = "checkBoxAggressivePlay";
-            this.checkBoxAggressivePlay.Size = new System.Drawing.Size(162, 28);
+            this.checkBoxAggressivePlay.Size = new System.Drawing.Size(138, 24);
             this.checkBoxAggressivePlay.TabIndex = 53;
             this.checkBoxAggressivePlay.Text = "Aggressive play";
             this.checkBoxAggressivePlay.UseVisualStyleBackColor = false;
@@ -937,7 +990,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(383, 191);
+            this.label27.Location = new System.Drawing.Point(348, 288);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(96, 20);
             this.label27.TabIndex = 52;
@@ -946,7 +999,7 @@
             // numericUpDownMovesHistorySize
             // 
             this.numericUpDownMovesHistorySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownMovesHistorySize.Location = new System.Drawing.Point(493, 185);
+            this.numericUpDownMovesHistorySize.Location = new System.Drawing.Point(458, 282);
             this.numericUpDownMovesHistorySize.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -958,10 +1011,10 @@
             0,
             0});
             this.numericUpDownMovesHistorySize.Name = "numericUpDownMovesHistorySize";
-            this.numericUpDownMovesHistorySize.Size = new System.Drawing.Size(70, 32);
+            this.numericUpDownMovesHistorySize.Size = new System.Drawing.Size(96, 32);
             this.numericUpDownMovesHistorySize.TabIndex = 51;
             this.numericUpDownMovesHistorySize.Value = new decimal(new int[] {
-            20,
+            10,
             0,
             0,
             0});
@@ -1003,7 +1056,7 @@
             // numericUpDownChessGames
             // 
             this.numericUpDownChessGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownChessGames.Location = new System.Drawing.Point(493, 147);
+            this.numericUpDownChessGames.Location = new System.Drawing.Point(458, 244);
             this.numericUpDownChessGames.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1015,10 +1068,10 @@
             0,
             0});
             this.numericUpDownChessGames.Name = "numericUpDownChessGames";
-            this.numericUpDownChessGames.Size = new System.Drawing.Size(70, 32);
+            this.numericUpDownChessGames.Size = new System.Drawing.Size(96, 32);
             this.numericUpDownChessGames.TabIndex = 47;
             this.numericUpDownChessGames.Value = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
@@ -1028,12 +1081,11 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(415, 153);
+            this.label25.Location = new System.Drawing.Point(380, 250);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(65, 20);
             this.label25.TabIndex = 46;
             this.label25.Text = "Games:";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // labelStalemates
             // 
@@ -1139,11 +1191,11 @@
             // 
             this.gradientButtonPlay.Active = false;
             this.gradientButtonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonPlay.Location = new System.Drawing.Point(224, 146);
+            this.gradientButtonPlay.Location = new System.Drawing.Point(248, 157);
             this.gradientButtonPlay.Name = "gradientButtonPlay";
             this.gradientButtonPlay.Size = new System.Drawing.Size(124, 32);
             this.gradientButtonPlay.TabIndex = 36;
-            this.gradientButtonPlay.Text = "Train on Checkmate";
+            this.gradientButtonPlay.Text = "Run Training";
             this.gradientButtonPlay.UseVisualStyleBackColor = true;
             this.gradientButtonPlay.Click += new System.EventHandler(this.gradientButtonPlay_Click);
             // 
@@ -1376,17 +1428,33 @@
             this.gradientButtonMakeMove.UseVisualStyleBackColor = true;
             this.gradientButtonMakeMove.Click += new System.EventHandler(this.gradientButtonMakeMove_Click);
             // 
-            // gradientButtonTrainOnPieces
+            // checkBoxTrainCheckmate
             // 
-            this.gradientButtonTrainOnPieces.Active = false;
-            this.gradientButtonTrainOnPieces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonTrainOnPieces.Location = new System.Drawing.Point(224, 185);
-            this.gradientButtonTrainOnPieces.Name = "gradientButtonTrainOnPieces";
-            this.gradientButtonTrainOnPieces.Size = new System.Drawing.Size(124, 32);
-            this.gradientButtonTrainOnPieces.TabIndex = 58;
-            this.gradientButtonTrainOnPieces.Text = "Train on Pieces";
-            this.gradientButtonTrainOnPieces.UseVisualStyleBackColor = true;
-            this.gradientButtonTrainOnPieces.Click += new System.EventHandler(this.gradientButtonTrainOnPieces_Click);
+            this.checkBoxTrainCheckmate.AutoSize = true;
+            this.checkBoxTrainCheckmate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBoxTrainCheckmate.Checked = true;
+            this.checkBoxTrainCheckmate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTrainCheckmate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTrainCheckmate.Location = new System.Drawing.Point(400, 137);
+            this.checkBoxTrainCheckmate.Name = "checkBoxTrainCheckmate";
+            this.checkBoxTrainCheckmate.Size = new System.Drawing.Size(167, 24);
+            this.checkBoxTrainCheckmate.TabIndex = 60;
+            this.checkBoxTrainCheckmate.Text = "Train on checkmate";
+            this.checkBoxTrainCheckmate.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxTrainPieces
+            // 
+            this.checkBoxTrainPieces.AutoSize = true;
+            this.checkBoxTrainPieces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBoxTrainPieces.Checked = true;
+            this.checkBoxTrainPieces.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTrainPieces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTrainPieces.Location = new System.Drawing.Point(400, 165);
+            this.checkBoxTrainPieces.Name = "checkBoxTrainPieces";
+            this.checkBoxTrainPieces.Size = new System.Drawing.Size(182, 24);
+            this.checkBoxTrainPieces.TabIndex = 61;
+            this.checkBoxTrainPieces.Text = "Train on taking pieces";
+            this.checkBoxTrainPieces.UseVisualStyleBackColor = false;
             // 
             // FormMain
             // 
@@ -1540,7 +1608,12 @@
         private System.Windows.Forms.CheckBox checkBoxAggressivePlay;
         private CustomControls.GradientButton gradientButtonPlayWhite;
         private CustomControls.GradientButton gradientButtonPlayBlack;
-        private CustomControls.GradientButton gradientButtonTrainOnPieces;
+        private CustomControls.GradientButton gradientButtonAbortTraining;
+        private System.Windows.Forms.Label label28;
+        internal System.Windows.Forms.Label labelNetworkQuality;
+        internal System.Windows.Forms.Label labelAllPossibleMoves;
+        private System.Windows.Forms.CheckBox checkBoxTrainPieces;
+        private System.Windows.Forms.CheckBox checkBoxTrainCheckmate;
     }
 }
 

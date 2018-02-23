@@ -33,8 +33,9 @@ namespace Omnion.Forms
         int inputLayerNeurons = 4;
         int outputLayerNeurons = 4;
         int numLayers = 3;
+        bool trainingActive = false;
 
-        Random rnd = new Random();
+        ChessPieceColor currentChessplayer = ChessPieceColor.White;
 
         NeuralNet.NeuralNetwork neuralNetwork;
         FormNeuralLayout formNeuralLayout;
@@ -51,16 +52,6 @@ namespace Omnion.Forms
         public FormMain()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         public void UpdateValues()
@@ -179,11 +170,6 @@ namespace Omnion.Forms
             LoadSettings();
         }
 
-        private void gradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void numericUpDownLearningRate_ValueChanged(object sender, EventArgs e)
         {
             LearningRate = Convert.ToDouble(numericUpDownLearningRate.Value);
@@ -198,14 +184,14 @@ namespace Omnion.Forms
         {
             InputLayerNeurons = 2;
             HiddenLayerNeurons = 2;
-            OutputLayerNeurons = 3;
+            OutputLayerNeurons = 1;
 
             NeuralNetwork = new NeuralNet.NeuralNetwork(LearningRate, new int[] { InputLayerNeurons, HiddenLayerNeurons, OutputLayerNeurons });
 
             double ll, lh, hl, hh;
             List<double> output = new List<double>();
             List<double> inputs = new List<double>();
-            int count = 0;
+            long count = 0;
 
             do
             {
@@ -250,12 +236,14 @@ namespace Omnion.Forms
                 ll = NeuralNetwork.OutputLayer().Neurons[0].Value;
 
                 count++;
+                labelTrainingIterations.Text = count.ToString();
+                labelNetworkQuality.Text = NeuralNetwork.MeasureNetworkQuality().ToString();
             }
             // really train this thing well...
-            while (count<1000000 && (hh > .1
-                || lh < .9
-                || hl < .9
-                || ll > .1));
+            while (count<10000000 && (hh > .02
+                || lh < .98
+                || hl < .98
+                || ll > .02));
 
             if (formNeuralLayout != null)
             {
@@ -464,21 +452,17 @@ namespace Omnion.Forms
         List<double> ChessboardToNeurons(ChessPiece[,,] chessBoard, int currentArrayPosition)
         {
             List<double> neurons = new List<double>();
-            for (int k = 0; k < inputLayerNeurons; k++)
-            {
-                neurons.Add(0);
-            }
             for (int y = 0; y < 8; y++)
             {
                 for (int x = 0; x < 8; x++)
                 {
                     int squareNumber = x + 8*y;
-                    int value = (int)chessBoard[x, y, currentArrayPosition].Type;
-                    if(chessBoard[x, y, currentArrayPosition].Color.Equals(ChessPieceColor.Black))
+                    int value = 7 - (int)chessBoard[x, y, currentArrayPosition].Type;      // own king: 12, own queen: 11, neutral: 7, other pawn: 6, other king: 0
+                    if(chessBoard[x, y, currentArrayPosition].Color.Equals(currentChessplayer))
                     {
-                        value += 6;
+                        value = (int)chessBoard[x, y, currentArrayPosition].Type + 7;
                     }
-                    neurons[squareNumber + value] = 1;          // fill one of the 13 possible square values 
+                    neurons.Add(value / 12.0d);
                 }
             }
 
@@ -488,31 +472,32 @@ namespace Omnion.Forms
         List<double> ChessmoveToNeurons(ChessMove move)
         {
             List<double> neurons = new List<double>();
+            int fromNeuronNumber = move.XFrom + 8 * move.YFrom;
+            int toNeuronNumber = 64 + move.XTo + 8 * move.YTo;
             for (int k = 0; k < outputLayerNeurons; k++)
             {
-                neurons.Add(0);
+                if(k==fromNeuronNumber || (k == toNeuronNumber))
+                {
+                    neurons.Add(1);
+                }
+                {
+                    neurons.Add(0);
+                }
             }
-            int moveNeuronNumber = move.XFrom + 8 * move.YFrom + 64 * move.XTo + 512 * move.YTo;
-            if (chessClient.ActivePlayer.Equals(ChessPieceColor.Black))
-            {
-                moveNeuronNumber += 4096;           // All moves from Black player are in second part of neurons
-            }
-            neurons[moveNeuronNumber] = 1;
 
             return neurons;
         }
 
-        private void TrainChessgame(/*List<ChessMove>[] possibleMovesHistory, */ ChessPiece[,,] chessBoardHistory, ChessMove[] chosenMoveHistory, int currentArrayPosition, int chessMovesHistorysize)
+        private void TrainChessgame(ChessPiece[,,] chessBoardHistory, ChessMove[] chosenMoveHistory, int currentArrayPosition)
         {
-            int movesToProcess = chessMovesHistorysize;
-            currentArrayPosition--; // the previous move was the winning
+            int movesToProcess = chosenMoveHistory.Length / 2;
             if (currentArrayPosition < 0)
             {
-                currentArrayPosition += chessMovesHistorysize * 2;
+                currentArrayPosition += chosenMoveHistory.Length;
             }
             while (movesToProcess > 0)
             {
-//                for (int k = 0; k < movesToProcess; k++)        // the later moves are more important for checkmate, so train them more
+//                for (int k = 0; k < movesToProcess; k++)        // the later moves are more important, so train them more
                 {
                     NeuralNetwork.Train(ChessboardToNeurons(chessBoardHistory, currentArrayPosition), ChessmoveToNeurons(chosenMoveHistory[currentArrayPosition]));
                 }
@@ -520,29 +505,23 @@ namespace Omnion.Forms
                 currentArrayPosition -= 2;
                 if(currentArrayPosition<0)
                 {
-                    currentArrayPosition += chessMovesHistorysize * 2;
+                    currentArrayPosition += chosenMoveHistory.Length;
                 }
             }
+
+            labelNetworkQuality.Text = NeuralNetwork.MeasureNetworkQuality().ToString();
         }
 
         private void gradientButtonPlay_Click(object sender, EventArgs e)
         {
-            if (neuralNetwork == null || neuralNetwork.HiddenNeurons!= 64 * 13)
-            {
-                // Here we want to use the combination of chessboard and all possible moves.
-                // That gives an almost unlimited amount of possibilities
-                // So, instead we use the maximum possible size of neurons and layers that we can work with
-                // We then map those numbers to different combinations.
-                InputLayerNeurons = HiddenLayerNeurons = 64 * 13;   // map to chessboard values
-                OutputLayerNeurons = 64 * 64 * 2;   // map to chosen (best) moves (square-from, square-to, divided in best moves for both players)
-                LearningRate = 0.9;
-                NumLayers = 3;
+            trainingActive = true;
 
-                NeuralNetwork = new NeuralNet.NeuralNetwork(LearningRate, new int[] { InputLayerNeurons, HiddenLayerNeurons, OutputLayerNeurons }, NumLayers);
-                UpdateValues();
+            if (neuralNetwork == null || (neuralNetwork.HiddenNeurons!=64 && OutputLayerNeurons!=128))
+            {
+                CreateChessNetwork();
             }
 
-            // input: current chessboard and all possible moves -> we use only all possible moves
+            // input: chessboard + current player
             // output: best move (from all possible moves)
             // learning condition: 
             // - CHECKMATE METHOD: as soon as the player is checkmate, the last 20 moves of the other player leading to that are fed to the training
@@ -553,25 +532,33 @@ namespace Omnion.Forms
             int checkMates = 0;
             int staleMates = 0;
             int maxTurnsToCheckmate = 0;
-            ChessPieceColor myColor = ChessPieceColor.White;
-            int chessMovesHistorysize = Convert.ToInt32(numericUpDownMovesHistorySize.Value);
+            currentChessplayer = ChessPieceColor.White;
+            int chessMovesHistorysize = Convert.ToInt32(numericUpDownMovesHistorySize.Value) * 2;
 
-//            List<ChessMove>[] possibleMovesHistory = new List<ChessMove>[chessMovesHistorysize * 2];
-            ChessPiece[,,] chessBoardHistory = new ChessPiece[8, 8, chessMovesHistorysize*2];
-            ChessMove[] chosenMoveHistory = new ChessMove[chessMovesHistorysize * 2];
+            ChessPiece[,,] chessBoardHistory = new ChessPiece[8, 8, chessMovesHistorysize];
+            ChessMove[] chosenMoveHistory = new ChessMove[chessMovesHistorysize];
             int currentArrayPosition = 0;
+            int numMoveResults = 0;
+            int netPointsWon = 0;
 
-            while (gamesPlayed < numericUpDownChessGames.Value)
+            labelCheckmates.Text = checkMates.ToString();
+            labelStalemates.Text = staleMates.ToString();
+            labelGamesPlayed.Text = gamesPlayed.ToString();
+            labelMaxTurnsToCheckmate.Text = maxTurnsToCheckmate.ToString();
+            labelNetworkQuality.Text = NeuralNetwork.MeasureNetworkQuality().ToString();
+
+            while (trainingActive && gamesPlayed < numericUpDownChessGames.Value)
             {
                 turnsPlayed++;
                 labelTurnsPlayed.Text = turnsPlayed.ToString();
-//                System.Threading.Thread.Sleep(100);
+                labelTrainingIterations.Text = NeuralNetwork.LearningIterations.ToString();
                 chessClient.GetGameStatus();
+                /*
                 while (!chessClient.ActivePlayer.Equals(myColor) && chessClient.PlayingGame.Equals(true))       // wait until it's my turn
                 {
                     System.Threading.Thread.Sleep(100);
                     chessClient.GetGameStatus();
-                }
+                }*/
 
                 if (chessClient.PlayingGame.Equals(false) || turnsPlayed>500)          // game finished
                 {
@@ -592,18 +579,20 @@ namespace Omnion.Forms
                         Refresh();
 
                         // train
-                        TrainChessgame(/*possibleMovesHistory,*/ chessBoardHistory, chosenMoveHistory, currentArrayPosition, chessMovesHistorysize);
+                        if(checkBoxTrainCheckmate.Checked)
+                        {
+                            TrainChessgame(chessBoardHistory, chosenMoveHistory, currentArrayPosition - 1);     // -1 because the previous move was the winning
+                        }
                     }
                     turnsPlayed = 0;
                     gamesPlayed++;
                     labelGamesPlayed.Text = gamesPlayed.ToString();
                     chessClient.PostReset();
-                    myColor = ChessPieceColor.White;
+                    currentChessplayer = ChessPieceColor.White;
                 }
 
                 chessClient.GetChessboard();
                 List<ChessMove> possibleMoves = chessClient.GetAllPossibleMoves();               
-//                possibleMovesHistory[currentArrayPosition] = possibleMoves;
                 
                 for (int y = 0; y < 8; y++)
                 {
@@ -617,62 +606,98 @@ namespace Omnion.Forms
                 ChessMove myMove = null;
                 if (checkBoxAggressivePlay.Checked)
                 {
-                    foreach(ChessMove move in possibleMoves)
+                    int bestMove = 0;
+                    // pick the best move
+                    foreach (ChessMove move in possibleMoves)
                     {
-                        if (myColor.Equals(ChessPieceColor.White) && chessClient.ChessBoard[move.XTo, move.YTo].IsBlack ||
-                            myColor.Equals(ChessPieceColor.Black) && chessClient.ChessBoard[move.XTo, move.YTo].IsWhite)
+                        if (currentChessplayer.Equals(ChessPieceColor.White) && chessClient.ChessBoard[move.XTo, move.YTo].IsBlack ||
+                            currentChessplayer.Equals(ChessPieceColor.Black) && chessClient.ChessBoard[move.XTo, move.YTo].IsWhite)
                         {
-                            myMove = move;          // select a square to take a piece from opponent
+                            int thisMove = MoveToPoints(move);
+                            if (MoveToPoints(move) > bestMove)
+                            {
+                                bestMove = thisMove;
+                                myMove = move;
+                            }
                         }
                     }
                 }
                 if (myMove == null)
                 {
-                    myMove = possibleMoves[rnd.Next(possibleMoves.Count)];
+                    CryptoRandom rand = new CryptoRandom();
+                    myMove = possibleMoves[rand.NextInt(possibleMoves.Count)];
                 }
                 chosenMoveHistory[currentArrayPosition] = myMove;
+
+                if (checkBoxTrainPieces.Checked)
+                {
+                    if (currentChessplayer.Equals(ChessPieceColor.White))
+                    {
+                        netPointsWon += MoveToPoints(myMove);
+                    }
+                    else
+                    {
+                        netPointsWon -= MoveToPoints(myMove);
+                    }
+
+                    numMoveResults++;
+                    if (numMoveResults == chessMovesHistorysize)        // time to check for white training
+                    {
+                        if (netPointsWon > 0)       // white (first player) made profit
+                        {
+                            Refresh();
+                            TrainChessgame(chessBoardHistory, chosenMoveHistory, currentArrayPosition - 1);
+                            labelNetworkQuality.Text = NeuralNetwork.MeasureNetworkQuality().ToString();
+                            numMoveResults = 0;
+                            netPointsWon = 0;
+                        }
+                    }
+                    if (numMoveResults == chessMovesHistorysize + 1)        // time to check for black training
+                    {
+                        if (netPointsWon < 0)       // black made profit
+                        {
+                            Refresh();
+                            TrainChessgame(chessBoardHistory, chosenMoveHistory, currentArrayPosition - 1);
+                            labelNetworkQuality.Text = NeuralNetwork.MeasureNetworkQuality().ToString();
+                            numMoveResults = -1;        // minus 1 because we start on white
+                            netPointsWon = 0;
+                        }
+                        else
+                        {
+                            numMoveResults -= 2;    // nobody made profit yet; keep trying last white and black move
+                        }
+                    }
+                }
+
                 chessClient.PostMove(myMove.XFrom, myMove.YFrom, myMove.XTo, myMove.YTo);
 
                 currentArrayPosition++;
-                if (currentArrayPosition == chessMovesHistorysize * 2)
+                if (currentArrayPosition == chessMovesHistorysize)
                 {
                     currentArrayPosition = 0;
                 }
 
-                if (myColor.Equals(ChessPieceColor.White))           // change player
+                if (currentChessplayer.Equals(ChessPieceColor.White))           // change player
                 {
-                    myColor = ChessPieceColor.Black;
+                    currentChessplayer = ChessPieceColor.Black;
                 }
                 else
                 {
-                    myColor = ChessPieceColor.White;
+                    currentChessplayer = ChessPieceColor.White;
                 }
             }
         }
 
         private void gradientButtonPresetChess_Click(object sender, EventArgs e)
         {
-            // Here we want to use the combination of chessboard and all possible moves.
-            // That gives an almost unlimited amount of possibilities
-            // So, instead we use the maximum possible size of neurons and layers that we can work with
-            // We then map those numbers to different combinations.
-            InputLayerNeurons = OutputLayerNeurons = HiddenLayerNeurons = 512;   // map to possible moves (xfrom, yfrom, xto, yto)
-            LearningRate = 0.9;
-            NumLayers = 10;
-
-            NeuralNetwork = new NeuralNet.NeuralNetwork(LearningRate, new int[] { InputLayerNeurons, HiddenLayerNeurons, OutputLayerNeurons }, NumLayers);
-            UpdateValues();
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
+            CreateChessNetwork();
         }
 
         private void gradientButtonGetAllPossibleMoves_Click(object sender, EventArgs e)
         {
             chessClient.GetMoveablePositions();
             List<Point> moves = chessClient.MoveablePositions;
+            labelAllPossibleMoves.Text = moves.Count.ToString();
         }
 
         private void gradientButtonMakeOneMove_Click(object sender, EventArgs e)
@@ -786,192 +811,51 @@ namespace Omnion.Forms
             Play(ChessPieceColor.Black);
         }
 
-        private void label25_Click(object sender, EventArgs e)
+        private void CreateChessNetwork()
         {
+            // Here we want to use the combination of chessboard and all possible moves.
+            // That gives an almost unlimited amount of possibilities
+            // So, instead we use the maximum possible size of neurons and layers that we can work with
+            // We then map those numbers to different combinations.
+            InputLayerNeurons = HiddenLayerNeurons = 64;   // map to chessboard values
+            OutputLayerNeurons = 64 + 64;   // map to chosen (best) moves (square-from, square-to)
+            LearningRate = 0.9;
+            NumLayers = 3;
 
+            NeuralNetwork = new NeuralNet.NeuralNetwork(LearningRate, new int[] { InputLayerNeurons, HiddenLayerNeurons, OutputLayerNeurons }, NumLayers);
+            UpdateValues();
+            MessageBox.Show("Created chess network.");
         }
 
-        private void gradientButtonTrainOnPieces_Click(object sender, EventArgs e)
+        private int MoveToPoints(ChessMove move)
         {
- /*           if (neuralNetwork == null || neuralNetwork.HiddenNeurons != 64 * 13)
+            if (chessClient.ChessBoard[move.XTo, move.YTo].Type.Equals(ChessPieceType.Pawn))
             {
-                // Here we want to use the combination of chessboard and all possible moves.
-                // That gives an almost unlimited amount of possibilities
-                // So, instead we use the maximum possible size of neurons and layers that we can work with
-                // We then map those numbers to different combinations.
-                InputLayerNeurons = HiddenLayerNeurons = 64 * 13;   // map to chessboard values
-                OutputLayerNeurons = 64 * 64 * 2;   // map to chosen (best) moves (square-from, square-to, divided in best moves for both players)
-                LearningRate = 0.9;
-                NumLayers = 3;
-
-                NeuralNetwork = new NeuralNet.NeuralNetwork(LearningRate, new int[] { InputLayerNeurons, HiddenLayerNeurons, OutputLayerNeurons }, NumLayers);
-                UpdateValues();
+                return 1;
             }
-            */
-
-            // input: current chessboard and all possible moves -> we use only all possible moves
-            // output: best move (from all possible moves)
-            // learning condition: 
-            // - CHECKMATE METHOD: as soon as the player is checkmate, the last 20 moves of the other player leading to that are fed to the training
-            // - WINPIECE METHOD: 
-
-            int gamesPlayed = 0;
-            int turnsPlayed = 0;
-            int checkMates = 0;
-            int staleMates = 0;
-            int maxTurnsToCheckmate = 0;
-            ChessPieceColor myColor = ChessPieceColor.White;
-            int chessMovesHistorysize = Convert.ToInt32(numericUpDownMovesHistorySize.Value);
-
-            //            List<ChessMove>[] possibleMovesHistory = new List<ChessMove>[chessMovesHistorysize * 2];
-            ChessPiece[,,] chessBoardHistory = new ChessPiece[8, 8, chessMovesHistorysize * 2];
-            ChessMove[] chosenMoveHistory = new ChessMove[chessMovesHistorysize * 2];
-            int currentArrayPosition = 0;
-            int[] pointsWonHistory = new int[chessMovesHistorysize * 2];
-            int moveResultBufferSize = 0;
-
-            while (gamesPlayed < numericUpDownChessGames.Value)
+            if (chessClient.ChessBoard[move.XTo, move.YTo].Type.Equals(ChessPieceType.Bishop))
             {
-                turnsPlayed++;
-                labelTurnsPlayed.Text = turnsPlayed.ToString();
-                //                System.Threading.Thread.Sleep(100);
-                chessClient.GetGameStatus();
-                while (!chessClient.ActivePlayer.Equals(myColor) && chessClient.PlayingGame.Equals(true))       // wait until it's my turn
-                {
-                    System.Threading.Thread.Sleep(100);
-                    chessClient.GetGameStatus();
-                }
-
-                if (chessClient.PlayingGame.Equals(false) || turnsPlayed > 500)          // game finished
-                {
-                    if (chessClient.ActivePlayer.Equals(ChessPieceColor.None))
-                    {
-                        staleMates++;
-                        labelStalemates.Text = staleMates.ToString();
-                    }
-                    if (chessClient.GameWon)
-                    {
-                        checkMates++;
-                        if (maxTurnsToCheckmate < turnsPlayed)
-                        {
-                            maxTurnsToCheckmate = turnsPlayed;
-                            labelMaxTurnsToCheckmate.Text = maxTurnsToCheckmate.ToString();
-                        }
-                        labelCheckmates.Text = checkMates.ToString();
-                    }
-                    turnsPlayed = 0;
-                    gamesPlayed++;
-                    labelGamesPlayed.Text = gamesPlayed.ToString();
-                    chessClient.PostReset();
-                    myColor = ChessPieceColor.White;
-                }
-
-                chessClient.GetChessboard();
-                List<ChessMove> possibleMoves = chessClient.GetAllPossibleMoves();
-                //                possibleMovesHistory[currentArrayPosition] = possibleMoves;
-
-                for (int y = 0; y < 8; y++)
-                {
-                    for (int x = 0; x < 8; x++)
-                    {
-                        chessBoardHistory[x, y, currentArrayPosition] = chessClient.ChessBoard[x, y];
-                    }
-                }
-
-                // pick a move
-                ChessMove myMove = null;
-                if (checkBoxAggressivePlay.Checked)
-                {
-                    foreach (ChessMove move in possibleMoves)
-                    {
-                        if (myColor.Equals(ChessPieceColor.White) && chessClient.ChessBoard[move.XTo, move.YTo].IsBlack ||
-                            myColor.Equals(ChessPieceColor.Black) && chessClient.ChessBoard[move.XTo, move.YTo].IsWhite)
-                        {
-                            myMove = move;          // select a square to take a piece from opponent
-                        }
-                    }
-                }
-                if (myMove == null)
-                {
-                    myMove = possibleMoves[rnd.Next(possibleMoves.Count)];
-                }
-                moveResultBufferSize++;
-                pointsWonHistory[currentArrayPosition] = 0;
-                if (myColor.Equals(ChessPieceColor.White) && chessClient.ChessBoard[myMove.XTo, myMove.YTo].IsBlack ||
-                    myColor.Equals(ChessPieceColor.Black) && chessClient.ChessBoard[myMove.XTo, myMove.YTo].IsWhite)
-                {
-                    if (chessClient.ChessBoard[myMove.XTo, myMove.YTo].Type.Equals(ChessPieceType.Pawn))
-                    {
-                        pointsWonHistory[currentArrayPosition] = 1;
-                    }
-                    if (chessClient.ChessBoard[myMove.XTo, myMove.YTo].Type.Equals(ChessPieceType.Bishop))
-                    {
-                        pointsWonHistory[currentArrayPosition] = 3;
-                    }
-                    if (chessClient.ChessBoard[myMove.XTo, myMove.YTo].Type.Equals(ChessPieceType.Horse))
-                    {
-                        pointsWonHistory[currentArrayPosition] = 4;
-                    }
-                    if (chessClient.ChessBoard[myMove.XTo, myMove.YTo].Type.Equals(ChessPieceType.Rook))
-                    {
-                        pointsWonHistory[currentArrayPosition] = 5;
-                    }
-                    if (chessClient.ChessBoard[myMove.XTo, myMove.YTo].Type.Equals(ChessPieceType.Queen))
-                    {
-                        pointsWonHistory[currentArrayPosition] = 8;
-                    }
-                }
-                chosenMoveHistory[currentArrayPosition] = myMove;
-                chessClient.PostMove(myMove.XFrom, myMove.YFrom, myMove.XTo, myMove.YTo);
-
-                if ((turnsPlayed>chessMovesHistorysize*2) && pointsWonHistory[currentArrayPosition] > 0)
-                {
-                    int myArrayPosition = currentArrayPosition - 1;
-                    if (myArrayPosition < 0)
-                    {
-                        myArrayPosition = (chessMovesHistorysize * 2) - 1;
-                    }
-                    int netScore = pointsWonHistory[currentArrayPosition];
-                    bool myTurn = true;
-                    while (myArrayPosition != currentArrayPosition)     // go through the previous moves and calculate if there was profit
-                    {
-                        myTurn = !myTurn;
-                        if(myTurn)
-                        {
-                            netScore += pointsWonHistory[myArrayPosition];
-                        }
-                        else
-                        {
-                            netScore -= pointsWonHistory[myArrayPosition];
-                        }
-                        myArrayPosition--;
-                        if(myArrayPosition<0)
-                        {
-                            myArrayPosition = (chessMovesHistorysize * 2) - 1;
-                        }
-                    }
-                    if (netScore > 0)
-                    {
-                        Refresh();
-                        TrainChessgame(/*possibleMovesHistory,*/ chessBoardHistory, chosenMoveHistory, currentArrayPosition, chessMovesHistorysize);
-                    }
-                }
-
-                currentArrayPosition++;
-                if (currentArrayPosition == chessMovesHistorysize * 2)
-                {
-                    currentArrayPosition = 0;
-                }
-
-                if (myColor.Equals(ChessPieceColor.White))           // change player
-                {
-                    myColor = ChessPieceColor.Black;
-                }
-                else
-                {
-                    myColor = ChessPieceColor.White;
-                }
+                return 3;
             }
+            if (chessClient.ChessBoard[move.XTo, move.YTo].Type.Equals(ChessPieceType.Horse))
+            {
+                return 4;
+            }
+            if (chessClient.ChessBoard[move.XTo, move.YTo].Type.Equals(ChessPieceType.Rook))
+            {
+                return 5;
+            }
+            if (chessClient.ChessBoard[move.XTo, move.YTo].Type.Equals(ChessPieceType.Queen))
+            {
+                return 8;
+            }
+
+            return 0;
+        }
+
+        private void gradientButtonAbortTraining_Click(object sender, EventArgs e)
+        {
+            trainingActive = false;
         }
 
         private void gradientButtonShowLayout_Click(object sender, EventArgs e)
