@@ -29,67 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gradientPanel1 = new Omnion.CustomControls.GradientPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gradientPanel21 = new Omnion.CustomControls.GradientPanel2();
-            this.gradientButtonReset = new Omnion.CustomControls.GradientButton();
-            this.gradientButtonPreferences = new Omnion.CustomControls.GradientButton();
-            this.gradientButtonSave = new Omnion.CustomControls.GradientButton();
-            this.gradientButtonLoad = new Omnion.CustomControls.GradientButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gradientPanel2 = new Omnion.CustomControls.GradientPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.gradientPanel22 = new Omnion.CustomControls.GradientPanel2();
-            this.label20 = new System.Windows.Forms.Label();
-            this.numericUpDownNumberOfLayers = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.numericUpDownOutputNeurons = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownInputNeurons = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.gradientButtonShowLayout = new Omnion.CustomControls.GradientButton();
-            this.numericUpDownHiddenLayerNeurons = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDownLearningRate = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.gradientPanel3 = new Omnion.CustomControls.GradientPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.gradientPanel23 = new Omnion.CustomControls.GradientPanel2();
-            this.gradientButtonPresetChess = new Omnion.CustomControls.GradientButton();
-            this.gradientButtonSequence = new Omnion.CustomControls.GradientButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.gradientButtonLearnXor = new Omnion.CustomControls.GradientButton();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.gradientPanel4 = new Omnion.CustomControls.GradientPanel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.gradientPanel24 = new Omnion.CustomControls.GradientPanel2();
-            this.labelNetworkQuality = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.gradientButtonAbortTraining = new Omnion.CustomControls.GradientButton();
-            this.gradientButtonTrain = new Omnion.CustomControls.GradientButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelTrainingIterations = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.gradientPanel5 = new Omnion.CustomControls.GradientPanel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.gradientPanel25 = new Omnion.CustomControls.GradientPanel2();
-            this.textBoxTestInput = new System.Windows.Forms.TextBox();
-            this.textBoxTestOutput = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.gradientButtonTest = new Omnion.CustomControls.GradientButton();
             this.panel11 = new System.Windows.Forms.Panel();
             this.gradientPanel6 = new Omnion.CustomControls.GradientPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.gradientPanel26 = new Omnion.CustomControls.GradientPanel2();
+            this.checkBoxRest = new System.Windows.Forms.CheckBox();
+            this.checkBoxTrainLastMovesMore = new System.Windows.Forms.CheckBox();
+            this.checkBoxTrainPieces = new System.Windows.Forms.CheckBox();
+            this.checkBoxTrainCheckmate = new System.Windows.Forms.CheckBox();
             this.labelAllPossibleMoves = new System.Windows.Forms.Label();
             this.gradientButtonPlayBlack = new Omnion.CustomControls.GradientButton();
             this.gradientButtonPlayWhite = new Omnion.CustomControls.GradientButton();
@@ -109,7 +60,6 @@
             this.labelGamesPlayed = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.gradientButtonMakeOneMove = new Omnion.CustomControls.GradientButton();
             this.gradientButtonPlay = new Omnion.CustomControls.GradientButton();
             this.numericUpDownYPossibleMoves = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownXPossibleMoves = new System.Windows.Forms.NumericUpDown();
@@ -128,33 +78,83 @@
             this.numericUpDownXfrom = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.gradientButtonMakeMove = new Omnion.CustomControls.GradientButton();
-            this.checkBoxTrainCheckmate = new System.Windows.Forms.CheckBox();
-            this.checkBoxTrainPieces = new System.Windows.Forms.CheckBox();
+            this.gradientPanel5 = new Omnion.CustomControls.GradientPanel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.gradientPanel25 = new Omnion.CustomControls.GradientPanel2();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.buttonOpenImage = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBoxTestInput = new System.Windows.Forms.TextBox();
+            this.textBoxTestOutput = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.gradientButtonTest = new Omnion.CustomControls.GradientButton();
+            this.gradientPanel4 = new Omnion.CustomControls.GradientPanel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.gradientPanel24 = new Omnion.CustomControls.GradientPanel2();
+            this.gradientButtonOnStepTraining = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonPauseTraining = new Omnion.CustomControls.GradientButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.labelTrainigRatio = new System.Windows.Forms.Label();
+            this.labelTrainigRatioText = new System.Windows.Forms.Label();
+            this.labelRunningTime = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.labelTrainingTime = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.labelNetworkQuality = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.gradientButtonAbortTraining = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonTrain = new Omnion.CustomControls.GradientButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxTrainingOutputValues = new System.Windows.Forms.TextBox();
+            this.textBoxTrainingInputValues = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelTrainingIterations = new System.Windows.Forms.Label();
+            this.gradientPanel3 = new Omnion.CustomControls.GradientPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.gradientPanel23 = new Omnion.CustomControls.GradientPanel2();
+            this.gradientButton2 = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonLearnBell = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonSequence = new Omnion.CustomControls.GradientButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.gradientButtonLearnXor = new Omnion.CustomControls.GradientButton();
+            this.gradientPanel2 = new Omnion.CustomControls.GradientPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gradientPanel22 = new Omnion.CustomControls.GradientPanel2();
+            this.numericUpDownScaleFactor = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.numericUpDownNumberOfLayers = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numericUpDownOutputNeurons = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownInputNeurons = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.gradientButtonShowLayout = new Omnion.CustomControls.GradientButton();
+            this.numericUpDownHiddenLayerNeurons = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDownLearningRate = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gradientPanel1 = new Omnion.CustomControls.GradientPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gradientPanel21 = new Omnion.CustomControls.GradientPanel2();
+            this.gradientButtonReset = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonPreferences = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonSave = new Omnion.CustomControls.GradientButton();
+            this.gradientButtonLoad = new Omnion.CustomControls.GradientButton();
             this.panel1.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.gradientPanel21.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.gradientPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.gradientPanel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfLayers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOutputNeurons)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInputNeurons)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHiddenLayerNeurons)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLearningRate)).BeginInit();
             this.panel5.SuspendLayout();
-            this.gradientPanel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.gradientPanel23.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.gradientPanel4.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.gradientPanel24.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.gradientPanel5.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.gradientPanel25.SuspendLayout();
             this.panel11.SuspendLayout();
             this.gradientPanel6.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -167,6 +167,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYfrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXfrom)).BeginInit();
+            this.gradientPanel5.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.gradientPanel25.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gradientPanel4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.gradientPanel24.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gradientPanel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.gradientPanel23.SuspendLayout();
+            this.gradientPanel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.gradientPanel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScaleFactor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfLayers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOutputNeurons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInputNeurons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHiddenLayerNeurons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLearningRate)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.gradientPanel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -177,94 +202,6 @@
             this.panel1.Size = new System.Drawing.Size(262, 204);
             this.panel1.TabIndex = 2;
             // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gradientPanel1.Controls.Add(this.panel2);
-            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(262, 204);
-            this.gradientPanel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gradientPanel21);
-            this.panel2.Location = new System.Drawing.Point(5, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 194);
-            this.panel2.TabIndex = 4;
-            // 
-            // gradientPanel21
-            // 
-            this.gradientPanel21.Controls.Add(this.gradientButtonReset);
-            this.gradientPanel21.Controls.Add(this.gradientButtonPreferences);
-            this.gradientPanel21.Controls.Add(this.gradientButtonSave);
-            this.gradientPanel21.Controls.Add(this.gradientButtonLoad);
-            this.gradientPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel21.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel21.Name = "gradientPanel21";
-            this.gradientPanel21.Size = new System.Drawing.Size(246, 190);
-            this.gradientPanel21.TabIndex = 3;
-            this.gradientPanel21.Paint += new System.Windows.Forms.PaintEventHandler(this.gradientPanel21_Paint);
-            // 
-            // gradientButtonReset
-            // 
-            this.gradientButtonReset.Active = false;
-            this.gradientButtonReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButtonReset.FlatAppearance.BorderSize = 2;
-            this.gradientButtonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonReset.Location = new System.Drawing.Point(15, 94);
-            this.gradientButtonReset.Name = "gradientButtonReset";
-            this.gradientButtonReset.Size = new System.Drawing.Size(110, 30);
-            this.gradientButtonReset.TabIndex = 3;
-            this.gradientButtonReset.Text = "Reset";
-            this.gradientButtonReset.UseVisualStyleBackColor = true;
-            this.gradientButtonReset.Click += new System.EventHandler(this.gradientButtonReset_Click);
-            // 
-            // gradientButtonPreferences
-            // 
-            this.gradientButtonPreferences.Active = false;
-            this.gradientButtonPreferences.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButtonPreferences.FlatAppearance.BorderSize = 2;
-            this.gradientButtonPreferences.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonPreferences.Location = new System.Drawing.Point(15, 135);
-            this.gradientButtonPreferences.Name = "gradientButtonPreferences";
-            this.gradientButtonPreferences.Size = new System.Drawing.Size(110, 30);
-            this.gradientButtonPreferences.TabIndex = 2;
-            this.gradientButtonPreferences.Text = "Preferences";
-            this.gradientButtonPreferences.UseVisualStyleBackColor = true;
-            this.gradientButtonPreferences.Click += new System.EventHandler(this.gradientButtonPreferences_Click);
-            // 
-            // gradientButtonSave
-            // 
-            this.gradientButtonSave.Active = false;
-            this.gradientButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButtonSave.FlatAppearance.BorderSize = 2;
-            this.gradientButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonSave.Location = new System.Drawing.Point(15, 53);
-            this.gradientButtonSave.Name = "gradientButtonSave";
-            this.gradientButtonSave.Size = new System.Drawing.Size(110, 30);
-            this.gradientButtonSave.TabIndex = 1;
-            this.gradientButtonSave.Text = "Save";
-            this.gradientButtonSave.UseVisualStyleBackColor = true;
-            this.gradientButtonSave.Click += new System.EventHandler(this.gradientButtonSave_Click);
-            // 
-            // gradientButtonLoad
-            // 
-            this.gradientButtonLoad.Active = false;
-            this.gradientButtonLoad.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButtonLoad.FlatAppearance.BorderSize = 2;
-            this.gradientButtonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonLoad.Location = new System.Drawing.Point(15, 14);
-            this.gradientButtonLoad.Name = "gradientButtonLoad";
-            this.gradientButtonLoad.Size = new System.Drawing.Size(110, 30);
-            this.gradientButtonLoad.TabIndex = 0;
-            this.gradientButtonLoad.Text = "Load";
-            this.gradientButtonLoad.UseVisualStyleBackColor = true;
-            this.gradientButtonLoad.Click += new System.EventHandler(this.gradientButtonLoad_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.gradientPanel2);
@@ -272,233 +209,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(508, 413);
             this.panel3.TabIndex = 4;
-            // 
-            // gradientPanel2
-            // 
-            this.gradientPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gradientPanel2.Controls.Add(this.panel4);
-            this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(508, 413);
-            this.gradientPanel2.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.gradientPanel22);
-            this.panel4.Location = new System.Drawing.Point(5, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(496, 400);
-            this.panel4.TabIndex = 4;
-            // 
-            // gradientPanel22
-            // 
-            this.gradientPanel22.Controls.Add(this.label20);
-            this.gradientPanel22.Controls.Add(this.numericUpDownNumberOfLayers);
-            this.gradientPanel22.Controls.Add(this.label15);
-            this.gradientPanel22.Controls.Add(this.numericUpDownOutputNeurons);
-            this.gradientPanel22.Controls.Add(this.numericUpDownInputNeurons);
-            this.gradientPanel22.Controls.Add(this.label6);
-            this.gradientPanel22.Controls.Add(this.label5);
-            this.gradientPanel22.Controls.Add(this.gradientButtonShowLayout);
-            this.gradientPanel22.Controls.Add(this.numericUpDownHiddenLayerNeurons);
-            this.gradientPanel22.Controls.Add(this.label3);
-            this.gradientPanel22.Controls.Add(this.numericUpDownLearningRate);
-            this.gradientPanel22.Controls.Add(this.label2);
-            this.gradientPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel22.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel22.Name = "gradientPanel22";
-            this.gradientPanel22.Size = new System.Drawing.Size(492, 396);
-            this.gradientPanel22.TabIndex = 3;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(15, 15);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(192, 24);
-            this.label20.TabIndex = 24;
-            this.label20.Text = "Network configuration";
-            // 
-            // numericUpDownNumberOfLayers
-            // 
-            this.numericUpDownNumberOfLayers.Location = new System.Drawing.Point(146, 187);
-            this.numericUpDownNumberOfLayers.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDownNumberOfLayers.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownNumberOfLayers.Name = "numericUpDownNumberOfLayers";
-            this.numericUpDownNumberOfLayers.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownNumberOfLayers.TabIndex = 23;
-            this.numericUpDownNumberOfLayers.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(27, 187);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 13);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Number of layers:";
-            // 
-            // numericUpDownOutputNeurons
-            // 
-            this.numericUpDownOutputNeurons.Location = new System.Drawing.Point(146, 127);
-            this.numericUpDownOutputNeurons.Maximum = new decimal(new int[] {
-            4000000,
-            0,
-            0,
-            0});
-            this.numericUpDownOutputNeurons.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownOutputNeurons.Name = "numericUpDownOutputNeurons";
-            this.numericUpDownOutputNeurons.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownOutputNeurons.TabIndex = 21;
-            this.numericUpDownOutputNeurons.Value = new decimal(new int[] {
-            9,
-            0,
-            0,
-            65536});
-            // 
-            // numericUpDownInputNeurons
-            // 
-            this.numericUpDownInputNeurons.Location = new System.Drawing.Point(146, 97);
-            this.numericUpDownInputNeurons.Maximum = new decimal(new int[] {
-            4000000,
-            0,
-            0,
-            0});
-            this.numericUpDownInputNeurons.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownInputNeurons.Name = "numericUpDownInputNeurons";
-            this.numericUpDownInputNeurons.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownInputNeurons.TabIndex = 20;
-            this.numericUpDownInputNeurons.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDownInputNeurons.ValueChanged += new System.EventHandler(this.numericUpDownInputNeurons_ValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(28, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Output neurons:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(28, 97);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Input neurons:";
-            // 
-            // gradientButtonShowLayout
-            // 
-            this.gradientButtonShowLayout.Active = false;
-            this.gradientButtonShowLayout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonShowLayout.Location = new System.Drawing.Point(194, 328);
-            this.gradientButtonShowLayout.Name = "gradientButtonShowLayout";
-            this.gradientButtonShowLayout.Size = new System.Drawing.Size(113, 37);
-            this.gradientButtonShowLayout.TabIndex = 17;
-            this.gradientButtonShowLayout.Text = "show Neural Layout";
-            this.gradientButtonShowLayout.UseVisualStyleBackColor = true;
-            this.gradientButtonShowLayout.Click += new System.EventHandler(this.gradientButtonShowLayout_Click);
-            // 
-            // numericUpDownHiddenLayerNeurons
-            // 
-            this.numericUpDownHiddenLayerNeurons.Location = new System.Drawing.Point(146, 157);
-            this.numericUpDownHiddenLayerNeurons.Maximum = new decimal(new int[] {
-            4000000,
-            0,
-            0,
-            0});
-            this.numericUpDownHiddenLayerNeurons.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownHiddenLayerNeurons.Name = "numericUpDownHiddenLayerNeurons";
-            this.numericUpDownHiddenLayerNeurons.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownHiddenLayerNeurons.TabIndex = 12;
-            this.numericUpDownHiddenLayerNeurons.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.numericUpDownHiddenLayerNeurons.ValueChanged += new System.EventHandler(this.numericUpDownHiddenLayerNeurons_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(27, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Hidden layer neurons:";
-            // 
-            // numericUpDownLearningRate
-            // 
-            this.numericUpDownLearningRate.DecimalPlaces = 1;
-            this.numericUpDownLearningRate.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownLearningRate.Location = new System.Drawing.Point(146, 67);
-            this.numericUpDownLearningRate.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownLearningRate.Name = "numericUpDownLearningRate";
-            this.numericUpDownLearningRate.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownLearningRate.TabIndex = 10;
-            this.numericUpDownLearningRate.Value = new decimal(new int[] {
-            9,
-            0,
-            0,
-            65536});
-            this.numericUpDownLearningRate.ValueChanged += new System.EventHandler(this.numericUpDownLearningRate_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(30, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Learning rate:";
             // 
             // panel5
             // 
@@ -508,257 +218,13 @@
             this.panel5.Size = new System.Drawing.Size(261, 204);
             this.panel5.TabIndex = 5;
             // 
-            // gradientPanel3
-            // 
-            this.gradientPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gradientPanel3.Controls.Add(this.panel6);
-            this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel3.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel3.Name = "gradientPanel3";
-            this.gradientPanel3.Size = new System.Drawing.Size(261, 204);
-            this.gradientPanel3.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.gradientPanel23);
-            this.panel6.Location = new System.Drawing.Point(5, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(249, 193);
-            this.panel6.TabIndex = 4;
-            // 
-            // gradientPanel23
-            // 
-            this.gradientPanel23.Controls.Add(this.gradientButtonPresetChess);
-            this.gradientPanel23.Controls.Add(this.gradientButtonSequence);
-            this.gradientPanel23.Controls.Add(this.label9);
-            this.gradientPanel23.Controls.Add(this.gradientButtonLearnXor);
-            this.gradientPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel23.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel23.Name = "gradientPanel23";
-            this.gradientPanel23.Size = new System.Drawing.Size(245, 189);
-            this.gradientPanel23.TabIndex = 3;
-            // 
-            // gradientButtonPresetChess
-            // 
-            this.gradientButtonPresetChess.Active = false;
-            this.gradientButtonPresetChess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonPresetChess.Location = new System.Drawing.Point(14, 128);
-            this.gradientButtonPresetChess.Name = "gradientButtonPresetChess";
-            this.gradientButtonPresetChess.Size = new System.Drawing.Size(142, 37);
-            this.gradientButtonPresetChess.TabIndex = 19;
-            this.gradientButtonPresetChess.Text = "Chess";
-            this.gradientButtonPresetChess.UseVisualStyleBackColor = true;
-            this.gradientButtonPresetChess.Click += new System.EventHandler(this.gradientButtonPresetChess_Click);
-            // 
-            // gradientButtonSequence
-            // 
-            this.gradientButtonSequence.Active = false;
-            this.gradientButtonSequence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonSequence.Location = new System.Drawing.Point(14, 83);
-            this.gradientButtonSequence.Name = "gradientButtonSequence";
-            this.gradientButtonSequence.Size = new System.Drawing.Size(142, 37);
-            this.gradientButtonSequence.TabIndex = 18;
-            this.gradientButtonSequence.Text = "learn 2 4 6 8 10 12 14 ?";
-            this.gradientButtonSequence.UseVisualStyleBackColor = true;
-            this.gradientButtonSequence.Click += new System.EventHandler(this.gradientButtonSequence_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(7, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 24);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Preset networks";
-            // 
-            // gradientButtonLearnXor
-            // 
-            this.gradientButtonLearnXor.Active = false;
-            this.gradientButtonLearnXor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonLearnXor.Location = new System.Drawing.Point(14, 39);
-            this.gradientButtonLearnXor.Name = "gradientButtonLearnXor";
-            this.gradientButtonLearnXor.Size = new System.Drawing.Size(142, 37);
-            this.gradientButtonLearnXor.TabIndex = 16;
-            this.gradientButtonLearnXor.Text = "learn XOR";
-            this.gradientButtonLearnXor.UseVisualStyleBackColor = true;
-            this.gradientButtonLearnXor.Click += new System.EventHandler(this.gradientButtonLearnXor_Click);
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.gradientPanel4);
             this.panel7.Location = new System.Drawing.Point(621, 425);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(534, 430);
+            this.panel7.Size = new System.Drawing.Size(534, 492);
             this.panel7.TabIndex = 6;
-            // 
-            // gradientPanel4
-            // 
-            this.gradientPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gradientPanel4.Controls.Add(this.panel8);
-            this.gradientPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel4.Name = "gradientPanel4";
-            this.gradientPanel4.Size = new System.Drawing.Size(534, 430);
-            this.gradientPanel4.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.gradientPanel24);
-            this.panel8.Location = new System.Drawing.Point(6, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(520, 418);
-            this.panel8.TabIndex = 4;
-            // 
-            // gradientPanel24
-            // 
-            this.gradientPanel24.Controls.Add(this.labelNetworkQuality);
-            this.gradientPanel24.Controls.Add(this.label28);
-            this.gradientPanel24.Controls.Add(this.gradientButtonAbortTraining);
-            this.gradientPanel24.Controls.Add(this.gradientButtonTrain);
-            this.gradientPanel24.Controls.Add(this.label14);
-            this.gradientPanel24.Controls.Add(this.label10);
-            this.gradientPanel24.Controls.Add(this.textBox2);
-            this.gradientPanel24.Controls.Add(this.textBox1);
-            this.gradientPanel24.Controls.Add(this.label8);
-            this.gradientPanel24.Controls.Add(this.label7);
-            this.gradientPanel24.Controls.Add(this.label4);
-            this.gradientPanel24.Controls.Add(this.labelTrainingIterations);
-            this.gradientPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel24.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel24.Name = "gradientPanel24";
-            this.gradientPanel24.Size = new System.Drawing.Size(516, 414);
-            this.gradientPanel24.TabIndex = 3;
-            // 
-            // labelNetworkQuality
-            // 
-            this.labelNetworkQuality.AutoSize = true;
-            this.labelNetworkQuality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelNetworkQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNetworkQuality.Location = new System.Drawing.Point(186, 79);
-            this.labelNetworkQuality.Name = "labelNetworkQuality";
-            this.labelNetworkQuality.Size = new System.Drawing.Size(53, 20);
-            this.labelNetworkQuality.TabIndex = 22;
-            this.labelNetworkQuality.Text = "XXXX";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(25, 79);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(110, 20);
-            this.label28.TabIndex = 21;
-            this.label28.Text = "Training value:";
-            // 
-            // gradientButtonAbortTraining
-            // 
-            this.gradientButtonAbortTraining.Active = false;
-            this.gradientButtonAbortTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonAbortTraining.Location = new System.Drawing.Point(261, 303);
-            this.gradientButtonAbortTraining.Name = "gradientButtonAbortTraining";
-            this.gradientButtonAbortTraining.Size = new System.Drawing.Size(113, 37);
-            this.gradientButtonAbortTraining.TabIndex = 20;
-            this.gradientButtonAbortTraining.Text = "Abort training";
-            this.gradientButtonAbortTraining.UseVisualStyleBackColor = true;
-            this.gradientButtonAbortTraining.Click += new System.EventHandler(this.gradientButtonAbortTraining_Click);
-            // 
-            // gradientButtonTrain
-            // 
-            this.gradientButtonTrain.Active = false;
-            this.gradientButtonTrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonTrain.Location = new System.Drawing.Point(127, 303);
-            this.gradientButtonTrain.Name = "gradientButtonTrain";
-            this.gradientButtonTrain.Size = new System.Drawing.Size(113, 37);
-            this.gradientButtonTrain.TabIndex = 19;
-            this.gradientButtonTrain.Text = "Run training";
-            this.gradientButtonTrain.UseVisualStyleBackColor = true;
-            this.gradientButtonTrain.Click += new System.EventHandler(this.gradientButtonTrain_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(15, 11);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 24);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Training";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(30, 119);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Training file:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(271, 176);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 94);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(29, 176);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 94);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(268, 148);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Output values:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(26, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Input values:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Number of Trainings:";
-            // 
-            // labelTrainingIterations
-            // 
-            this.labelTrainingIterations.AutoSize = true;
-            this.labelTrainingIterations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelTrainingIterations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTrainingIterations.Location = new System.Drawing.Point(186, 45);
-            this.labelTrainingIterations.Name = "labelTrainingIterations";
-            this.labelTrainingIterations.Size = new System.Drawing.Size(53, 20);
-            this.labelTrainingIterations.TabIndex = 16;
-            this.labelTrainingIterations.Text = "XXXX";
             // 
             // panel9
             // 
@@ -768,105 +234,12 @@
             this.panel9.Size = new System.Drawing.Size(366, 413);
             this.panel9.TabIndex = 7;
             // 
-            // gradientPanel5
-            // 
-            this.gradientPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gradientPanel5.Controls.Add(this.panel10);
-            this.gradientPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel5.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel5.Name = "gradientPanel5";
-            this.gradientPanel5.Size = new System.Drawing.Size(366, 413);
-            this.gradientPanel5.TabIndex = 2;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.gradientPanel25);
-            this.panel10.Location = new System.Drawing.Point(5, 5);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(353, 399);
-            this.panel10.TabIndex = 4;
-            // 
-            // gradientPanel25
-            // 
-            this.gradientPanel25.Controls.Add(this.textBoxTestInput);
-            this.gradientPanel25.Controls.Add(this.textBoxTestOutput);
-            this.gradientPanel25.Controls.Add(this.label13);
-            this.gradientPanel25.Controls.Add(this.label12);
-            this.gradientPanel25.Controls.Add(this.label11);
-            this.gradientPanel25.Controls.Add(this.gradientButtonTest);
-            this.gradientPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPanel25.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel25.Name = "gradientPanel25";
-            this.gradientPanel25.Size = new System.Drawing.Size(349, 395);
-            this.gradientPanel25.TabIndex = 3;
-            // 
-            // textBoxTestInput
-            // 
-            this.textBoxTestInput.Location = new System.Drawing.Point(20, 71);
-            this.textBoxTestInput.Multiline = true;
-            this.textBoxTestInput.Name = "textBoxTestInput";
-            this.textBoxTestInput.Size = new System.Drawing.Size(307, 129);
-            this.textBoxTestInput.TabIndex = 21;
-            // 
-            // textBoxTestOutput
-            // 
-            this.textBoxTestOutput.Location = new System.Drawing.Point(20, 281);
-            this.textBoxTestOutput.Multiline = true;
-            this.textBoxTestOutput.Name = "textBoxTestOutput";
-            this.textBoxTestOutput.Size = new System.Drawing.Size(307, 71);
-            this.textBoxTestOutput.TabIndex = 20;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(32, 255);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 13);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Output value(s):";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(17, 43);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(166, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Input values(s) comma separated:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(7, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 24);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Test";
-            // 
-            // gradientButtonTest
-            // 
-            this.gradientButtonTest.Active = false;
-            this.gradientButtonTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonTest.Location = new System.Drawing.Point(122, 217);
-            this.gradientButtonTest.Name = "gradientButtonTest";
-            this.gradientButtonTest.Size = new System.Drawing.Size(113, 33);
-            this.gradientButtonTest.TabIndex = 15;
-            this.gradientButtonTest.Text = "Test";
-            this.gradientButtonTest.UseVisualStyleBackColor = true;
-            this.gradientButtonTest.Click += new System.EventHandler(this.gradientButtonTest_Click);
-            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.gradientPanel6);
             this.panel11.Location = new System.Drawing.Point(5, 425);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(610, 430);
+            this.panel11.Size = new System.Drawing.Size(610, 492);
             this.panel11.TabIndex = 8;
             // 
             // gradientPanel6
@@ -876,7 +249,7 @@
             this.gradientPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel6.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel6.Name = "gradientPanel6";
-            this.gradientPanel6.Size = new System.Drawing.Size(610, 430);
+            this.gradientPanel6.Size = new System.Drawing.Size(610, 492);
             this.gradientPanel6.TabIndex = 2;
             // 
             // panel12
@@ -885,11 +258,13 @@
             this.panel12.Controls.Add(this.gradientPanel26);
             this.panel12.Location = new System.Drawing.Point(6, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(596, 418);
+            this.panel12.Size = new System.Drawing.Size(596, 479);
             this.panel12.TabIndex = 4;
             // 
             // gradientPanel26
             // 
+            this.gradientPanel26.Controls.Add(this.checkBoxRest);
+            this.gradientPanel26.Controls.Add(this.checkBoxTrainLastMovesMore);
             this.gradientPanel26.Controls.Add(this.checkBoxTrainPieces);
             this.gradientPanel26.Controls.Add(this.checkBoxTrainCheckmate);
             this.gradientPanel26.Controls.Add(this.labelAllPossibleMoves);
@@ -911,7 +286,6 @@
             this.gradientPanel26.Controls.Add(this.labelGamesPlayed);
             this.gradientPanel26.Controls.Add(this.label22);
             this.gradientPanel26.Controls.Add(this.label21);
-            this.gradientPanel26.Controls.Add(this.gradientButtonMakeOneMove);
             this.gradientPanel26.Controls.Add(this.gradientButtonPlay);
             this.gradientPanel26.Controls.Add(this.numericUpDownYPossibleMoves);
             this.gradientPanel26.Controls.Add(this.numericUpDownXPossibleMoves);
@@ -933,8 +307,62 @@
             this.gradientPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel26.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel26.Name = "gradientPanel26";
-            this.gradientPanel26.Size = new System.Drawing.Size(592, 414);
+            this.gradientPanel26.Size = new System.Drawing.Size(592, 475);
             this.gradientPanel26.TabIndex = 3;
+            // 
+            // checkBoxRest
+            // 
+            this.checkBoxRest.AutoSize = true;
+            this.checkBoxRest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBoxRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxRest.Location = new System.Drawing.Point(384, 237);
+            this.checkBoxRest.Name = "checkBoxRest";
+            this.checkBoxRest.Size = new System.Drawing.Size(157, 24);
+            this.checkBoxRest.TabIndex = 63;
+            this.checkBoxRest.Text = "Post REST moves";
+            this.checkBoxRest.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxTrainLastMovesMore
+            // 
+            this.checkBoxTrainLastMovesMore.AutoSize = true;
+            this.checkBoxTrainLastMovesMore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBoxTrainLastMovesMore.Checked = true;
+            this.checkBoxTrainLastMovesMore.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTrainLastMovesMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTrainLastMovesMore.Location = new System.Drawing.Point(384, 207);
+            this.checkBoxTrainLastMovesMore.Name = "checkBoxTrainLastMovesMore";
+            this.checkBoxTrainLastMovesMore.Size = new System.Drawing.Size(182, 24);
+            this.checkBoxTrainLastMovesMore.TabIndex = 62;
+            this.checkBoxTrainLastMovesMore.Text = "Train last moves more";
+            this.checkBoxTrainLastMovesMore.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxTrainPieces
+            // 
+            this.checkBoxTrainPieces.AutoSize = true;
+            this.checkBoxTrainPieces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBoxTrainPieces.Checked = true;
+            this.checkBoxTrainPieces.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTrainPieces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTrainPieces.Location = new System.Drawing.Point(384, 152);
+            this.checkBoxTrainPieces.Name = "checkBoxTrainPieces";
+            this.checkBoxTrainPieces.Size = new System.Drawing.Size(182, 24);
+            this.checkBoxTrainPieces.TabIndex = 61;
+            this.checkBoxTrainPieces.Text = "Train on taking pieces";
+            this.checkBoxTrainPieces.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxTrainCheckmate
+            // 
+            this.checkBoxTrainCheckmate.AutoSize = true;
+            this.checkBoxTrainCheckmate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkBoxTrainCheckmate.Checked = true;
+            this.checkBoxTrainCheckmate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTrainCheckmate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTrainCheckmate.Location = new System.Drawing.Point(384, 124);
+            this.checkBoxTrainCheckmate.Name = "checkBoxTrainCheckmate";
+            this.checkBoxTrainCheckmate.Size = new System.Drawing.Size(167, 24);
+            this.checkBoxTrainCheckmate.TabIndex = 60;
+            this.checkBoxTrainCheckmate.Text = "Train on checkmate";
+            this.checkBoxTrainCheckmate.UseVisualStyleBackColor = false;
             // 
             // labelAllPossibleMoves
             // 
@@ -951,7 +379,7 @@
             // 
             this.gradientButtonPlayBlack.Active = false;
             this.gradientButtonPlayBlack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonPlayBlack.Location = new System.Drawing.Point(17, 123);
+            this.gradientButtonPlayBlack.Location = new System.Drawing.Point(17, 92);
             this.gradientButtonPlayBlack.Name = "gradientButtonPlayBlack";
             this.gradientButtonPlayBlack.Size = new System.Drawing.Size(124, 32);
             this.gradientButtonPlayBlack.TabIndex = 57;
@@ -963,7 +391,7 @@
             // 
             this.gradientButtonPlayWhite.Active = false;
             this.gradientButtonPlayWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonPlayWhite.Location = new System.Drawing.Point(17, 85);
+            this.gradientButtonPlayWhite.Location = new System.Drawing.Point(17, 55);
             this.gradientButtonPlayWhite.Name = "gradientButtonPlayWhite";
             this.gradientButtonPlayWhite.Size = new System.Drawing.Size(124, 32);
             this.gradientButtonPlayWhite.TabIndex = 56;
@@ -978,7 +406,7 @@
             this.checkBoxAggressivePlay.Checked = true;
             this.checkBoxAggressivePlay.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAggressivePlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxAggressivePlay.Location = new System.Drawing.Point(400, 191);
+            this.checkBoxAggressivePlay.Location = new System.Drawing.Point(384, 178);
             this.checkBoxAggressivePlay.Name = "checkBoxAggressivePlay";
             this.checkBoxAggressivePlay.Size = new System.Drawing.Size(138, 24);
             this.checkBoxAggressivePlay.TabIndex = 53;
@@ -990,7 +418,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(348, 288);
+            this.label27.Location = new System.Drawing.Point(360, 318);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(96, 20);
             this.label27.TabIndex = 52;
@@ -999,7 +427,7 @@
             // numericUpDownMovesHistorySize
             // 
             this.numericUpDownMovesHistorySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownMovesHistorySize.Location = new System.Drawing.Point(458, 282);
+            this.numericUpDownMovesHistorySize.Location = new System.Drawing.Point(470, 312);
             this.numericUpDownMovesHistorySize.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1056,7 +484,7 @@
             // numericUpDownChessGames
             // 
             this.numericUpDownChessGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownChessGames.Location = new System.Drawing.Point(458, 244);
+            this.numericUpDownChessGames.Location = new System.Drawing.Point(470, 274);
             this.numericUpDownChessGames.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1081,7 +509,7 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(380, 250);
+            this.label25.Location = new System.Drawing.Point(392, 280);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(65, 20);
             this.label25.TabIndex = 46;
@@ -1175,23 +603,11 @@
             this.label21.TabIndex = 38;
             this.label21.Text = "Games:";
             // 
-            // gradientButtonMakeOneMove
-            // 
-            this.gradientButtonMakeOneMove.Active = false;
-            this.gradientButtonMakeOneMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonMakeOneMove.Location = new System.Drawing.Point(17, 47);
-            this.gradientButtonMakeOneMove.Name = "gradientButtonMakeOneMove";
-            this.gradientButtonMakeOneMove.Size = new System.Drawing.Size(124, 32);
-            this.gradientButtonMakeOneMove.TabIndex = 37;
-            this.gradientButtonMakeOneMove.Text = "Make a move";
-            this.gradientButtonMakeOneMove.UseVisualStyleBackColor = true;
-            this.gradientButtonMakeOneMove.Click += new System.EventHandler(this.gradientButtonMakeOneMove_Click);
-            // 
             // gradientButtonPlay
             // 
             this.gradientButtonPlay.Active = false;
             this.gradientButtonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButtonPlay.Location = new System.Drawing.Point(248, 157);
+            this.gradientButtonPlay.Location = new System.Drawing.Point(224, 144);
             this.gradientButtonPlay.Name = "gradientButtonPlay";
             this.gradientButtonPlay.Size = new System.Drawing.Size(124, 32);
             this.gradientButtonPlay.TabIndex = 36;
@@ -1428,38 +844,900 @@
             this.gradientButtonMakeMove.UseVisualStyleBackColor = true;
             this.gradientButtonMakeMove.Click += new System.EventHandler(this.gradientButtonMakeMove_Click);
             // 
-            // checkBoxTrainCheckmate
+            // gradientPanel5
             // 
-            this.checkBoxTrainCheckmate.AutoSize = true;
-            this.checkBoxTrainCheckmate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.checkBoxTrainCheckmate.Checked = true;
-            this.checkBoxTrainCheckmate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTrainCheckmate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTrainCheckmate.Location = new System.Drawing.Point(400, 137);
-            this.checkBoxTrainCheckmate.Name = "checkBoxTrainCheckmate";
-            this.checkBoxTrainCheckmate.Size = new System.Drawing.Size(167, 24);
-            this.checkBoxTrainCheckmate.TabIndex = 60;
-            this.checkBoxTrainCheckmate.Text = "Train on checkmate";
-            this.checkBoxTrainCheckmate.UseVisualStyleBackColor = false;
+            this.gradientPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gradientPanel5.Controls.Add(this.panel10);
+            this.gradientPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel5.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel5.Name = "gradientPanel5";
+            this.gradientPanel5.Size = new System.Drawing.Size(366, 413);
+            this.gradientPanel5.TabIndex = 2;
             // 
-            // checkBoxTrainPieces
+            // panel10
             // 
-            this.checkBoxTrainPieces.AutoSize = true;
-            this.checkBoxTrainPieces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.checkBoxTrainPieces.Checked = true;
-            this.checkBoxTrainPieces.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTrainPieces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTrainPieces.Location = new System.Drawing.Point(400, 165);
-            this.checkBoxTrainPieces.Name = "checkBoxTrainPieces";
-            this.checkBoxTrainPieces.Size = new System.Drawing.Size(182, 24);
-            this.checkBoxTrainPieces.TabIndex = 61;
-            this.checkBoxTrainPieces.Text = "Train on taking pieces";
-            this.checkBoxTrainPieces.UseVisualStyleBackColor = false;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.gradientPanel25);
+            this.panel10.Location = new System.Drawing.Point(5, 5);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(353, 399);
+            this.panel10.TabIndex = 4;
+            // 
+            // gradientPanel25
+            // 
+            this.gradientPanel25.Controls.Add(this.panel13);
+            this.gradientPanel25.Controls.Add(this.buttonOpenImage);
+            this.gradientPanel25.Controls.Add(this.textBox3);
+            this.gradientPanel25.Controls.Add(this.label31);
+            this.gradientPanel25.Controls.Add(this.textBoxTestInput);
+            this.gradientPanel25.Controls.Add(this.textBoxTestOutput);
+            this.gradientPanel25.Controls.Add(this.label12);
+            this.gradientPanel25.Controls.Add(this.label11);
+            this.gradientPanel25.Controls.Add(this.gradientButtonTest);
+            this.gradientPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel25.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel25.Name = "gradientPanel25";
+            this.gradientPanel25.Size = new System.Drawing.Size(349, 395);
+            this.gradientPanel25.TabIndex = 3;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Silver;
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel13.Controls.Add(this.pictureBox1);
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Location = new System.Drawing.Point(193, 213);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(119, 97);
+            this.panel13.TabIndex = 26;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 93);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(19, 81);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 13);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Output value(s):";
+            // 
+            // buttonOpenImage
+            // 
+            this.buttonOpenImage.Location = new System.Drawing.Point(239, 180);
+            this.buttonOpenImage.Name = "buttonOpenImage";
+            this.buttonOpenImage.Size = new System.Drawing.Size(48, 21);
+            this.buttonOpenImage.TabIndex = 24;
+            this.buttonOpenImage.Text = "...";
+            this.buttonOpenImage.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(28, 181);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(203, 20);
+            this.textBox3.TabIndex = 23;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label31.Location = new System.Drawing.Point(17, 156);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(39, 13);
+            this.label31.TabIndex = 22;
+            this.label31.Text = "Image:";
+            // 
+            // textBoxTestInput
+            // 
+            this.textBoxTestInput.Location = new System.Drawing.Point(20, 41);
+            this.textBoxTestInput.Multiline = true;
+            this.textBoxTestInput.Name = "textBoxTestInput";
+            this.textBoxTestInput.Size = new System.Drawing.Size(307, 87);
+            this.textBoxTestInput.TabIndex = 21;
+            // 
+            // textBoxTestOutput
+            // 
+            this.textBoxTestOutput.Location = new System.Drawing.Point(20, 316);
+            this.textBoxTestOutput.Multiline = true;
+            this.textBoxTestOutput.Name = "textBoxTestOutput";
+            this.textBoxTestOutput.Size = new System.Drawing.Size(307, 71);
+            this.textBoxTestOutput.TabIndex = 20;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(78, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(166, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Input values(s) comma separated:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(7, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 24);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Test";
+            // 
+            // gradientButtonTest
+            // 
+            this.gradientButtonTest.Active = false;
+            this.gradientButtonTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonTest.Location = new System.Drawing.Point(28, 246);
+            this.gradientButtonTest.Name = "gradientButtonTest";
+            this.gradientButtonTest.Size = new System.Drawing.Size(113, 33);
+            this.gradientButtonTest.TabIndex = 15;
+            this.gradientButtonTest.Text = "Test";
+            this.gradientButtonTest.UseVisualStyleBackColor = true;
+            this.gradientButtonTest.Click += new System.EventHandler(this.gradientButtonTest_Click);
+            // 
+            // gradientPanel4
+            // 
+            this.gradientPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gradientPanel4.Controls.Add(this.panel8);
+            this.gradientPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel4.Name = "gradientPanel4";
+            this.gradientPanel4.Size = new System.Drawing.Size(534, 492);
+            this.gradientPanel4.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.gradientPanel24);
+            this.panel8.Location = new System.Drawing.Point(6, 4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(520, 480);
+            this.panel8.TabIndex = 4;
+            // 
+            // gradientPanel24
+            // 
+            this.gradientPanel24.Controls.Add(this.gradientButtonOnStepTraining);
+            this.gradientPanel24.Controls.Add(this.gradientButtonPauseTraining);
+            this.gradientPanel24.Controls.Add(this.label10);
+            this.gradientPanel24.Controls.Add(this.panel14);
+            this.gradientPanel24.Controls.Add(this.labelTrainigRatio);
+            this.gradientPanel24.Controls.Add(this.labelTrainigRatioText);
+            this.gradientPanel24.Controls.Add(this.labelRunningTime);
+            this.gradientPanel24.Controls.Add(this.label29);
+            this.gradientPanel24.Controls.Add(this.labelTrainingTime);
+            this.gradientPanel24.Controls.Add(this.label30);
+            this.gradientPanel24.Controls.Add(this.labelNetworkQuality);
+            this.gradientPanel24.Controls.Add(this.label28);
+            this.gradientPanel24.Controls.Add(this.gradientButtonAbortTraining);
+            this.gradientPanel24.Controls.Add(this.gradientButtonTrain);
+            this.gradientPanel24.Controls.Add(this.label14);
+            this.gradientPanel24.Controls.Add(this.textBoxTrainingOutputValues);
+            this.gradientPanel24.Controls.Add(this.textBoxTrainingInputValues);
+            this.gradientPanel24.Controls.Add(this.label8);
+            this.gradientPanel24.Controls.Add(this.label7);
+            this.gradientPanel24.Controls.Add(this.label4);
+            this.gradientPanel24.Controls.Add(this.labelTrainingIterations);
+            this.gradientPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel24.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel24.Name = "gradientPanel24";
+            this.gradientPanel24.Size = new System.Drawing.Size(516, 476);
+            this.gradientPanel24.TabIndex = 3;
+            // 
+            // gradientButtonOnStepTraining
+            // 
+            this.gradientButtonOnStepTraining.Active = false;
+            this.gradientButtonOnStepTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonOnStepTraining.Location = new System.Drawing.Point(284, 424);
+            this.gradientButtonOnStepTraining.Name = "gradientButtonOnStepTraining";
+            this.gradientButtonOnStepTraining.Size = new System.Drawing.Size(93, 37);
+            this.gradientButtonOnStepTraining.TabIndex = 32;
+            this.gradientButtonOnStepTraining.Text = "1 training step";
+            this.gradientButtonOnStepTraining.UseVisualStyleBackColor = true;
+            this.gradientButtonOnStepTraining.Click += new System.EventHandler(this.gradientButtonOnStepTraining_Click);
+            // 
+            // gradientButtonPauseTraining
+            // 
+            this.gradientButtonPauseTraining.Active = false;
+            this.gradientButtonPauseTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonPauseTraining.Location = new System.Drawing.Point(187, 424);
+            this.gradientButtonPauseTraining.Name = "gradientButtonPauseTraining";
+            this.gradientButtonPauseTraining.Size = new System.Drawing.Size(91, 37);
+            this.gradientButtonPauseTraining.TabIndex = 31;
+            this.gradientButtonPauseTraining.Text = "Pause training";
+            this.gradientButtonPauseTraining.UseVisualStyleBackColor = true;
+            this.gradientButtonPauseTraining.Click += new System.EventHandler(this.gradientButton3_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label10.Location = new System.Drawing.Point(26, 194);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Input image:";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Silver;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel14.Controls.Add(this.pictureBox2);
+            this.panel14.Controls.Add(this.label32);
+            this.panel14.Location = new System.Drawing.Point(99, 184);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(104, 97);
+            this.panel14.TabIndex = 29;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 93);
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label32.Location = new System.Drawing.Point(19, 81);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(82, 13);
+            this.label32.TabIndex = 19;
+            this.label32.Text = "Output value(s):";
+            // 
+            // labelTrainigRatio
+            // 
+            this.labelTrainigRatio.AutoSize = true;
+            this.labelTrainigRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTrainigRatio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTrainigRatio.Location = new System.Drawing.Point(303, 131);
+            this.labelTrainigRatio.Name = "labelTrainigRatio";
+            this.labelTrainigRatio.Size = new System.Drawing.Size(53, 20);
+            this.labelTrainigRatio.TabIndex = 28;
+            this.labelTrainigRatio.Text = "XXXX";
+            // 
+            // labelTrainigRatioText
+            // 
+            this.labelTrainigRatioText.AutoSize = true;
+            this.labelTrainigRatioText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTrainigRatioText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTrainigRatioText.Location = new System.Drawing.Point(110, 131);
+            this.labelTrainigRatioText.Name = "labelTrainigRatioText";
+            this.labelTrainigRatioText.Size = new System.Drawing.Size(190, 20);
+            this.labelTrainigRatioText.TabIndex = 27;
+            this.labelTrainigRatioText.Text = "Training / Simulation ratio:";
+            // 
+            // labelRunningTime
+            // 
+            this.labelRunningTime.AutoSize = true;
+            this.labelRunningTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelRunningTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRunningTime.Location = new System.Drawing.Point(303, 104);
+            this.labelRunningTime.Name = "labelRunningTime";
+            this.labelRunningTime.Size = new System.Drawing.Size(53, 20);
+            this.labelRunningTime.TabIndex = 26;
+            this.labelRunningTime.Text = "XXXX";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(110, 102);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(139, 20);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "Total running time:";
+            // 
+            // labelTrainingTime
+            // 
+            this.labelTrainingTime.AutoSize = true;
+            this.labelTrainingTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTrainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTrainingTime.Location = new System.Drawing.Point(303, 75);
+            this.labelTrainingTime.Name = "labelTrainingTime";
+            this.labelTrainingTime.Size = new System.Drawing.Size(53, 20);
+            this.labelTrainingTime.TabIndex = 24;
+            this.labelTrainingTime.Text = "XXXX";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(110, 74);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(167, 20);
+            this.label30.TabIndex = 23;
+            this.label30.Text = "Time spend in training:";
+            // 
+            // labelNetworkQuality
+            // 
+            this.labelNetworkQuality.AutoSize = true;
+            this.labelNetworkQuality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNetworkQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNetworkQuality.Location = new System.Drawing.Point(303, 50);
+            this.labelNetworkQuality.Name = "labelNetworkQuality";
+            this.labelNetworkQuality.Size = new System.Drawing.Size(53, 20);
+            this.labelNetworkQuality.TabIndex = 22;
+            this.labelNetworkQuality.Text = "XXXX";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(110, 49);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(110, 20);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Training value:";
+            // 
+            // gradientButtonAbortTraining
+            // 
+            this.gradientButtonAbortTraining.Active = false;
+            this.gradientButtonAbortTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonAbortTraining.Location = new System.Drawing.Point(383, 424);
+            this.gradientButtonAbortTraining.Name = "gradientButtonAbortTraining";
+            this.gradientButtonAbortTraining.Size = new System.Drawing.Size(93, 37);
+            this.gradientButtonAbortTraining.TabIndex = 20;
+            this.gradientButtonAbortTraining.Text = "Abort training";
+            this.gradientButtonAbortTraining.UseVisualStyleBackColor = true;
+            this.gradientButtonAbortTraining.Click += new System.EventHandler(this.gradientButtonAbortTraining_Click);
+            // 
+            // gradientButtonTrain
+            // 
+            this.gradientButtonTrain.Active = false;
+            this.gradientButtonTrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonTrain.Location = new System.Drawing.Point(37, 424);
+            this.gradientButtonTrain.Name = "gradientButtonTrain";
+            this.gradientButtonTrain.Size = new System.Drawing.Size(94, 37);
+            this.gradientButtonTrain.TabIndex = 19;
+            this.gradientButtonTrain.Text = "Run training";
+            this.gradientButtonTrain.UseVisualStyleBackColor = true;
+            this.gradientButtonTrain.Click += new System.EventHandler(this.gradientButtonTrain_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(15, 11);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 24);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Training";
+            // 
+            // textBoxTrainingOutputValues
+            // 
+            this.textBoxTrainingOutputValues.Location = new System.Drawing.Point(271, 312);
+            this.textBoxTrainingOutputValues.Multiline = true;
+            this.textBoxTrainingOutputValues.Name = "textBoxTrainingOutputValues";
+            this.textBoxTrainingOutputValues.Size = new System.Drawing.Size(225, 94);
+            this.textBoxTrainingOutputValues.TabIndex = 15;
+            // 
+            // textBoxTrainingInputValues
+            // 
+            this.textBoxTrainingInputValues.Location = new System.Drawing.Point(29, 312);
+            this.textBoxTrainingInputValues.Multiline = true;
+            this.textBoxTrainingInputValues.Name = "textBoxTrainingInputValues";
+            this.textBoxTrainingInputValues.Size = new System.Drawing.Size(225, 94);
+            this.textBoxTrainingInputValues.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(268, 294);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Output value(s):";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(26, 293);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Input value(s):";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(110, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Number of Trainings:";
+            // 
+            // labelTrainingIterations
+            // 
+            this.labelTrainingIterations.AutoSize = true;
+            this.labelTrainingIterations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTrainingIterations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTrainingIterations.Location = new System.Drawing.Point(303, 22);
+            this.labelTrainingIterations.Name = "labelTrainingIterations";
+            this.labelTrainingIterations.Size = new System.Drawing.Size(53, 20);
+            this.labelTrainingIterations.TabIndex = 16;
+            this.labelTrainingIterations.Text = "XXXX";
+            // 
+            // gradientPanel3
+            // 
+            this.gradientPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gradientPanel3.Controls.Add(this.panel6);
+            this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel3.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel3.Name = "gradientPanel3";
+            this.gradientPanel3.Size = new System.Drawing.Size(261, 204);
+            this.gradientPanel3.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.gradientPanel23);
+            this.panel6.Location = new System.Drawing.Point(5, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(249, 193);
+            this.panel6.TabIndex = 4;
+            // 
+            // gradientPanel23
+            // 
+            this.gradientPanel23.Controls.Add(this.gradientButton2);
+            this.gradientPanel23.Controls.Add(this.gradientButtonLearnBell);
+            this.gradientPanel23.Controls.Add(this.gradientButtonSequence);
+            this.gradientPanel23.Controls.Add(this.label9);
+            this.gradientPanel23.Controls.Add(this.gradientButtonLearnXor);
+            this.gradientPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel23.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel23.Name = "gradientPanel23";
+            this.gradientPanel23.Size = new System.Drawing.Size(245, 189);
+            this.gradientPanel23.TabIndex = 3;
+            // 
+            // gradientButton2
+            // 
+            this.gradientButton2.Active = false;
+            this.gradientButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton2.Location = new System.Drawing.Point(14, 142);
+            this.gradientButton2.Name = "gradientButton2";
+            this.gradientButton2.Size = new System.Drawing.Size(142, 28);
+            this.gradientButton2.TabIndex = 20;
+            this.gradientButton2.Text = "learn Circles";
+            this.gradientButton2.UseVisualStyleBackColor = true;
+            // 
+            // gradientButtonLearnBell
+            // 
+            this.gradientButtonLearnBell.Active = false;
+            this.gradientButtonLearnBell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonLearnBell.Location = new System.Drawing.Point(14, 104);
+            this.gradientButtonLearnBell.Name = "gradientButtonLearnBell";
+            this.gradientButtonLearnBell.Size = new System.Drawing.Size(142, 28);
+            this.gradientButtonLearnBell.TabIndex = 19;
+            this.gradientButtonLearnBell.Text = "learn Bell Inequality";
+            this.gradientButtonLearnBell.UseVisualStyleBackColor = true;
+            this.gradientButtonLearnBell.Click += new System.EventHandler(this.gradientButtonLearnBell_Click);
+            // 
+            // gradientButtonSequence
+            // 
+            this.gradientButtonSequence.Active = false;
+            this.gradientButtonSequence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonSequence.Location = new System.Drawing.Point(14, 69);
+            this.gradientButtonSequence.Name = "gradientButtonSequence";
+            this.gradientButtonSequence.Size = new System.Drawing.Size(142, 25);
+            this.gradientButtonSequence.TabIndex = 18;
+            this.gradientButtonSequence.Text = "learn 2 4 6 8 10 12 14 ?";
+            this.gradientButtonSequence.UseVisualStyleBackColor = true;
+            this.gradientButtonSequence.Click += new System.EventHandler(this.gradientButtonSequence_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(7, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 24);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Preset networks";
+            // 
+            // gradientButtonLearnXor
+            // 
+            this.gradientButtonLearnXor.Active = false;
+            this.gradientButtonLearnXor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonLearnXor.Location = new System.Drawing.Point(14, 39);
+            this.gradientButtonLearnXor.Name = "gradientButtonLearnXor";
+            this.gradientButtonLearnXor.Size = new System.Drawing.Size(142, 22);
+            this.gradientButtonLearnXor.TabIndex = 16;
+            this.gradientButtonLearnXor.Text = "learn XOR";
+            this.gradientButtonLearnXor.UseVisualStyleBackColor = true;
+            this.gradientButtonLearnXor.Click += new System.EventHandler(this.gradientButtonLearnXor_Click);
+            // 
+            // gradientPanel2
+            // 
+            this.gradientPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gradientPanel2.Controls.Add(this.panel4);
+            this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel2.Name = "gradientPanel2";
+            this.gradientPanel2.Size = new System.Drawing.Size(508, 413);
+            this.gradientPanel2.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.gradientPanel22);
+            this.panel4.Location = new System.Drawing.Point(5, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(496, 400);
+            this.panel4.TabIndex = 4;
+            // 
+            // gradientPanel22
+            // 
+            this.gradientPanel22.Controls.Add(this.numericUpDownScaleFactor);
+            this.gradientPanel22.Controls.Add(this.label33);
+            this.gradientPanel22.Controls.Add(this.label20);
+            this.gradientPanel22.Controls.Add(this.numericUpDownNumberOfLayers);
+            this.gradientPanel22.Controls.Add(this.label15);
+            this.gradientPanel22.Controls.Add(this.numericUpDownOutputNeurons);
+            this.gradientPanel22.Controls.Add(this.numericUpDownInputNeurons);
+            this.gradientPanel22.Controls.Add(this.label6);
+            this.gradientPanel22.Controls.Add(this.label5);
+            this.gradientPanel22.Controls.Add(this.gradientButtonShowLayout);
+            this.gradientPanel22.Controls.Add(this.numericUpDownHiddenLayerNeurons);
+            this.gradientPanel22.Controls.Add(this.label3);
+            this.gradientPanel22.Controls.Add(this.numericUpDownLearningRate);
+            this.gradientPanel22.Controls.Add(this.label2);
+            this.gradientPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel22.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel22.Name = "gradientPanel22";
+            this.gradientPanel22.Size = new System.Drawing.Size(492, 396);
+            this.gradientPanel22.TabIndex = 3;
+            // 
+            // numericUpDownScaleFactor
+            // 
+            this.numericUpDownScaleFactor.DecimalPlaces = 3;
+            this.numericUpDownScaleFactor.Location = new System.Drawing.Point(185, 217);
+            this.numericUpDownScaleFactor.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownScaleFactor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownScaleFactor.Name = "numericUpDownScaleFactor";
+            this.numericUpDownScaleFactor.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownScaleFactor.TabIndex = 26;
+            this.numericUpDownScaleFactor.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(27, 221);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(91, 18);
+            this.label33.TabIndex = 25;
+            this.label33.Text = "Scale factor:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label20.Location = new System.Drawing.Point(15, 15);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(256, 24);
+            this.label20.TabIndex = 24;
+            this.label20.Text = "Neural Network Configuration";
+            // 
+            // numericUpDownNumberOfLayers
+            // 
+            this.numericUpDownNumberOfLayers.Location = new System.Drawing.Point(185, 187);
+            this.numericUpDownNumberOfLayers.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownNumberOfLayers.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownNumberOfLayers.Name = "numericUpDownNumberOfLayers";
+            this.numericUpDownNumberOfLayers.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownNumberOfLayers.TabIndex = 23;
+            this.numericUpDownNumberOfLayers.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDownNumberOfLayers.ValueChanged += new System.EventHandler(this.numericUpDownNumberOfLayers_ValueChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(27, 187);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 18);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Number of layers:";
+            // 
+            // numericUpDownOutputNeurons
+            // 
+            this.numericUpDownOutputNeurons.Location = new System.Drawing.Point(185, 127);
+            this.numericUpDownOutputNeurons.Maximum = new decimal(new int[] {
+            4000000,
+            0,
+            0,
+            0});
+            this.numericUpDownOutputNeurons.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownOutputNeurons.Name = "numericUpDownOutputNeurons";
+            this.numericUpDownOutputNeurons.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownOutputNeurons.TabIndex = 21;
+            this.numericUpDownOutputNeurons.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
+            // 
+            // numericUpDownInputNeurons
+            // 
+            this.numericUpDownInputNeurons.Location = new System.Drawing.Point(185, 97);
+            this.numericUpDownInputNeurons.Maximum = new decimal(new int[] {
+            4000000,
+            0,
+            0,
+            0});
+            this.numericUpDownInputNeurons.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownInputNeurons.Name = "numericUpDownInputNeurons";
+            this.numericUpDownInputNeurons.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownInputNeurons.TabIndex = 20;
+            this.numericUpDownInputNeurons.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDownInputNeurons.ValueChanged += new System.EventHandler(this.numericUpDownInputNeurons_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(26, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Output neurons:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(28, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 18);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Input neurons:";
+            // 
+            // gradientButtonShowLayout
+            // 
+            this.gradientButtonShowLayout.Active = false;
+            this.gradientButtonShowLayout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonShowLayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButtonShowLayout.Location = new System.Drawing.Point(148, 328);
+            this.gradientButtonShowLayout.Name = "gradientButtonShowLayout";
+            this.gradientButtonShowLayout.Size = new System.Drawing.Size(159, 37);
+            this.gradientButtonShowLayout.TabIndex = 17;
+            this.gradientButtonShowLayout.Text = "show Neural Layout";
+            this.gradientButtonShowLayout.UseVisualStyleBackColor = true;
+            this.gradientButtonShowLayout.Click += new System.EventHandler(this.gradientButtonShowLayout_Click);
+            // 
+            // numericUpDownHiddenLayerNeurons
+            // 
+            this.numericUpDownHiddenLayerNeurons.Location = new System.Drawing.Point(185, 157);
+            this.numericUpDownHiddenLayerNeurons.Maximum = new decimal(new int[] {
+            4000000,
+            0,
+            0,
+            0});
+            this.numericUpDownHiddenLayerNeurons.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownHiddenLayerNeurons.Name = "numericUpDownHiddenLayerNeurons";
+            this.numericUpDownHiddenLayerNeurons.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownHiddenLayerNeurons.TabIndex = 12;
+            this.numericUpDownHiddenLayerNeurons.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDownHiddenLayerNeurons.ValueChanged += new System.EventHandler(this.numericUpDownHiddenLayerNeurons_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(27, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 18);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Hidden layer neurons:";
+            // 
+            // numericUpDownLearningRate
+            // 
+            this.numericUpDownLearningRate.DecimalPlaces = 1;
+            this.numericUpDownLearningRate.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownLearningRate.Location = new System.Drawing.Point(185, 67);
+            this.numericUpDownLearningRate.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownLearningRate.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownLearningRate.Name = "numericUpDownLearningRate";
+            this.numericUpDownLearningRate.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownLearningRate.TabIndex = 10;
+            this.numericUpDownLearningRate.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
+            this.numericUpDownLearningRate.ValueChanged += new System.EventHandler(this.numericUpDownLearningRate_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Learning rate:";
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gradientPanel1.Controls.Add(this.panel2);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(262, 204);
+            this.gradientPanel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.gradientPanel21);
+            this.panel2.Location = new System.Drawing.Point(5, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 194);
+            this.panel2.TabIndex = 4;
+            // 
+            // gradientPanel21
+            // 
+            this.gradientPanel21.Controls.Add(this.gradientButtonReset);
+            this.gradientPanel21.Controls.Add(this.gradientButtonPreferences);
+            this.gradientPanel21.Controls.Add(this.gradientButtonSave);
+            this.gradientPanel21.Controls.Add(this.gradientButtonLoad);
+            this.gradientPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel21.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel21.Name = "gradientPanel21";
+            this.gradientPanel21.Size = new System.Drawing.Size(246, 190);
+            this.gradientPanel21.TabIndex = 3;
+            this.gradientPanel21.Paint += new System.Windows.Forms.PaintEventHandler(this.gradientPanel21_Paint);
+            // 
+            // gradientButtonReset
+            // 
+            this.gradientButtonReset.Active = false;
+            this.gradientButtonReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButtonReset.FlatAppearance.BorderSize = 2;
+            this.gradientButtonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonReset.Location = new System.Drawing.Point(15, 94);
+            this.gradientButtonReset.Name = "gradientButtonReset";
+            this.gradientButtonReset.Size = new System.Drawing.Size(110, 30);
+            this.gradientButtonReset.TabIndex = 3;
+            this.gradientButtonReset.Text = "Reset";
+            this.gradientButtonReset.UseVisualStyleBackColor = true;
+            this.gradientButtonReset.Click += new System.EventHandler(this.gradientButtonReset_Click);
+            // 
+            // gradientButtonPreferences
+            // 
+            this.gradientButtonPreferences.Active = false;
+            this.gradientButtonPreferences.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButtonPreferences.FlatAppearance.BorderSize = 2;
+            this.gradientButtonPreferences.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonPreferences.Location = new System.Drawing.Point(15, 135);
+            this.gradientButtonPreferences.Name = "gradientButtonPreferences";
+            this.gradientButtonPreferences.Size = new System.Drawing.Size(110, 30);
+            this.gradientButtonPreferences.TabIndex = 2;
+            this.gradientButtonPreferences.Text = "Preferences";
+            this.gradientButtonPreferences.UseVisualStyleBackColor = true;
+            this.gradientButtonPreferences.Click += new System.EventHandler(this.gradientButtonPreferences_Click);
+            // 
+            // gradientButtonSave
+            // 
+            this.gradientButtonSave.Active = false;
+            this.gradientButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButtonSave.FlatAppearance.BorderSize = 2;
+            this.gradientButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonSave.Location = new System.Drawing.Point(15, 53);
+            this.gradientButtonSave.Name = "gradientButtonSave";
+            this.gradientButtonSave.Size = new System.Drawing.Size(110, 30);
+            this.gradientButtonSave.TabIndex = 1;
+            this.gradientButtonSave.Text = "Save";
+            this.gradientButtonSave.UseVisualStyleBackColor = true;
+            this.gradientButtonSave.Click += new System.EventHandler(this.gradientButtonSave_Click);
+            // 
+            // gradientButtonLoad
+            // 
+            this.gradientButtonLoad.Active = false;
+            this.gradientButtonLoad.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButtonLoad.FlatAppearance.BorderSize = 2;
+            this.gradientButtonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButtonLoad.Location = new System.Drawing.Point(15, 14);
+            this.gradientButtonLoad.Name = "gradientButtonLoad";
+            this.gradientButtonLoad.Size = new System.Drawing.Size(110, 30);
+            this.gradientButtonLoad.TabIndex = 0;
+            this.gradientButtonLoad.Text = "Load";
+            this.gradientButtonLoad.UseVisualStyleBackColor = true;
+            this.gradientButtonLoad.Click += new System.EventHandler(this.gradientButtonLoad_Click);
             // 
             // FormMain
             // 
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(1158, 857);
+            this.ClientSize = new System.Drawing.Size(1158, 924);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
@@ -1471,34 +1749,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panel1.ResumeLayout(false);
-            this.gradientPanel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.gradientPanel21.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.gradientPanel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.gradientPanel22.ResumeLayout(false);
-            this.gradientPanel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfLayers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOutputNeurons)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInputNeurons)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHiddenLayerNeurons)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLearningRate)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.gradientPanel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.gradientPanel23.ResumeLayout(false);
-            this.gradientPanel23.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.gradientPanel4.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.gradientPanel24.ResumeLayout(false);
-            this.gradientPanel24.PerformLayout();
             this.panel9.ResumeLayout(false);
-            this.gradientPanel5.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.gradientPanel25.ResumeLayout(false);
-            this.gradientPanel25.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.gradientPanel6.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
@@ -1512,6 +1766,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYfrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXfrom)).EndInit();
+            this.gradientPanel5.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.gradientPanel25.ResumeLayout(false);
+            this.gradientPanel25.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gradientPanel4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.gradientPanel24.ResumeLayout(false);
+            this.gradientPanel24.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.gradientPanel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.gradientPanel23.ResumeLayout(false);
+            this.gradientPanel23.PerformLayout();
+            this.gradientPanel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.gradientPanel22.ResumeLayout(false);
+            this.gradientPanel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScaleFactor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfLayers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOutputNeurons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInputNeurons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHiddenLayerNeurons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLearningRate)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.gradientPanel21.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1536,9 +1821,8 @@
         private CustomControls.GradientPanel gradientPanel4;
         private System.Windows.Forms.Panel panel8;
         private CustomControls.GradientPanel2 gradientPanel24;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTrainingOutputValues;
+        private System.Windows.Forms.TextBox textBoxTrainingInputValues;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel9;
@@ -1588,14 +1872,12 @@
         private System.Windows.Forms.Label label20;
         internal System.Windows.Forms.Label labelTrainingIterations;
         private CustomControls.GradientButton gradientButtonPlay;
-        private CustomControls.GradientButton gradientButtonMakeOneMove;
         internal System.Windows.Forms.Label labelTurnsPlayed;
         internal System.Windows.Forms.Label labelGamesPlayed;
         internal System.Windows.Forms.Label label22;
         internal System.Windows.Forms.Label label21;
         internal System.Windows.Forms.Label labelCheckmates;
         internal System.Windows.Forms.Label label23;
-        private CustomControls.GradientButton gradientButtonPresetChess;
         internal System.Windows.Forms.Label labelStalemates;
         internal System.Windows.Forms.Label label24;
         internal System.Windows.Forms.Label label25;
@@ -1614,6 +1896,29 @@
         internal System.Windows.Forms.Label labelAllPossibleMoves;
         private System.Windows.Forms.CheckBox checkBoxTrainPieces;
         private System.Windows.Forms.CheckBox checkBoxTrainCheckmate;
+        internal System.Windows.Forms.Label labelTrainingTime;
+        private System.Windows.Forms.Label label30;
+        internal System.Windows.Forms.Label labelRunningTime;
+        private System.Windows.Forms.Label label29;
+        internal System.Windows.Forms.Label labelTrainigRatio;
+        private System.Windows.Forms.Label labelTrainigRatioText;
+        private System.Windows.Forms.CheckBox checkBoxTrainLastMovesMore;
+        private System.Windows.Forms.CheckBox checkBoxRest;
+        private CustomControls.GradientButton gradientButtonLearnBell;
+        private CustomControls.GradientButton gradientButton2;
+        private System.Windows.Forms.Button buttonOpenImage;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomControls.GradientButton gradientButtonPauseTraining;
+        internal System.Windows.Forms.NumericUpDown numericUpDownScaleFactor;
+        private System.Windows.Forms.Label label33;
+        private CustomControls.GradientButton gradientButtonOnStepTraining;
     }
 }
 

@@ -70,6 +70,7 @@
     <Compile Include="ChessClient\ChessClient.cs" />
     <Compile Include="ChessClient\ChessMove.cs" />
     <Compile Include="ChessClient\ChessPiece.cs" />
+    <Compile Include="ChessCode\ChessGame.cs" />
     <Compile Include="CustomControls\GradientButton.cs">
       <SubType>Component</SubType>
     </Compile>

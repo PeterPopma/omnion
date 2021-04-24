@@ -15,7 +15,7 @@ namespace Omnion.ChessClient
     class ChessClient
     {
         static HttpClient client = new HttpClient();
-        private static ChessPiece[,] chessBoard;
+        private static ChessPiece[][] chessBoard;
         ChessPieceColor activePlayer;
         bool playingGame;
         bool gameWon;
@@ -31,7 +31,7 @@ namespace Omnion.ChessClient
                 new MediaTypeWithQualityHeaderValue("application/xml"));
         }
 
-        public ChessPiece[,] ChessBoard { get => chessBoard; set => chessBoard = value; }
+        public ChessPiece[][] ChessBoard { get => chessBoard; set => chessBoard = value; }
         public ChessPieceColor ActivePlayer { get => activePlayer; set => activePlayer = value; }
         public bool PlayingGame { get => playingGame; set => playingGame = value; }
         public List<Point> PossibleMoves { get => possibleMoves; set => possibleMoves = value; }
@@ -56,8 +56,11 @@ namespace Omnion.ChessClient
                 string chessboardString = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(chessboardString);
-                chessBoard = new ChessPiece[8,8];
-
+                chessBoard = new ChessPiece[8][];
+                for (int i = 0; i < 8; i++)
+                {
+                    chessBoard[i] = new ChessPiece[8];
+                }
                 foreach (XmlNode node in doc.DocumentElement.ChildNodes)
                 {
                     int x = Convert.ToInt32(node.Attributes["x"].Value);
@@ -114,7 +117,7 @@ namespace Omnion.ChessClient
                         }
                     }
                     ChessPiece piece = new ChessPiece(type, color);
-                    chessBoard[x,y] = piece;
+                    chessBoard[x][y] = piece;
                 }
             }
         }

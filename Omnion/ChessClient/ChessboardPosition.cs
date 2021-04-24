@@ -29,7 +29,7 @@ namespace Omnion.ChessClient
             get => x == -1;
         }
 
-        public void setNone()
+        public void SetNone()
         {
             x = -1;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Omnion.NeuralNet
         private long inputNeurons;
         private long outputNeurons;
         private long hiddenNeurons;
+        private TimeSpan trainingTime;
 
 
         public int LayerCount
@@ -30,6 +32,7 @@ namespace Omnion.NeuralNet
         public long InputNeurons { get => inputNeurons; set => inputNeurons = value; }
         public long OutputNeurons { get => outputNeurons; set => outputNeurons = value; }
         public long HiddenNeurons { get => hiddenNeurons; set => hiddenNeurons = value; }
+        public TimeSpan TrainingTime { get => trainingTime; set => trainingTime = value; }
 
         public int MaxNeuronsInOneLayer()
         {
@@ -227,12 +230,12 @@ namespace Omnion.NeuralNet
             }
         }
 
-        public void Train(List<double> input, double output)
+        public void Train(List<double> inputs, double output)
         {
             List<double> outputs = new List<double>();
             outputs.Add(output);
 
-            Train(input, outputs);
+            Train(inputs, outputs);
         }
         public void Train(double input, double output)
         {
@@ -246,6 +249,9 @@ namespace Omnion.NeuralNet
         // Returns true if Training successful
         public void Train(List<double> input, List<double> output)
         {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             learningIterations++;
 
             Run(input);
@@ -283,6 +289,9 @@ namespace Omnion.NeuralNet
                     Application.DoEvents();     // PP: give some processor time to handle interface
                 }
             }
+
+            stopWatch.Stop();
+            trainingTime += stopWatch.Elapsed;
         }
 
     }
